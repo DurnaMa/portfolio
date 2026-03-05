@@ -253,10 +253,7 @@ section {
   position: relative;
   overflow: hidden;
   padding-top: var(--nav-h);
-  background:
-    radial-gradient(ellipse 55% 65% at 68% 25%, #0d3d2e 0%, transparent 65%),
-    radial-gradient(ellipse 40% 50% at 55% 15%, #0a5c3f 0%, transparent 55%),
-    radial-gradient(ellipse 70% 40% at 75% 45%, #071f18 0%, transparent 70%), var(--bg);
+  background: linear-gradient(35deg, #1c1c1c 50%, #08463b 80%);
 }
 .hero-content {
   text-align: center;
