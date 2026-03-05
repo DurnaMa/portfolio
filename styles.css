@@ -361,6 +361,7 @@ section {
 .icon-link:hover {
   color: var(--teal);
 }
+
 .ticker-wrap {
   position: absolute;
   bottom: 0;
@@ -371,7 +372,7 @@ section {
   background: rgba(255, 255, 255, 0.06);
   border-top: 1px solid var(--border);
   padding: 12px 32px;
-  transform: rotate(3deg);
+  transform: rotate(-3deg);
   transform-origin: left center;
   display: flex;
   align-items: center;
@@ -379,7 +380,6 @@ section {
 .ticker-track {
   display: flex;
   gap: 56px;
-  width: max-content;
   white-space: nowrap;
   animation: ticker 20s linear infinite;
 }
@@ -387,9 +387,10 @@ section {
   font-family: 'Space Mono', monospace;
   font-size: 13px;
   color: var(--teal);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 .ticker-dot {
   width: 6px;
@@ -399,10 +400,10 @@ section {
   flex-shrink: 0;
 }
 @keyframes ticker {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
@@ -909,8 +910,8 @@ footer {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 20s !important;
+    transition-duration: 2s !important;
   }
   html {
     scroll-behavior: auto;
