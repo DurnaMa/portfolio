@@ -256,11 +256,7 @@ nav {
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
-  /*padding: clamp(1.25rem, 3vw, 2rem) var(--pad);*/
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 1rem;
-  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2rem) var(--pad);
 }
 .footer-logo {
   display: flex;
