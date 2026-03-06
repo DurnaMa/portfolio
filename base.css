@@ -126,7 +126,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /*padding-inline: var(--pad);*/
   background: rgba(10, 10, 10, 0.9);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
