@@ -1,23 +1,7 @@
-/* ============================================================
-   LOKALE SCHRIFTARTEN – Space Mono & Space Grotesk
-   
-   ANLEITUNG:
-   1. Gehe zu https://gwfh.mranftl.com/fonts
-   2. Lade "Space Mono" (400, 700) und "Space Grotesk" (300, 400, 500, 600, 700) herunter
-   3. Lege die .woff2-Dateien in den Ordner: assets/fonts/
-   4. Binde diese Datei in dein HTML ein:
-      <link rel="stylesheet" href="fonts.css">
-   ============================================================ */
-
-
-/* ============================================================
-   SPACE MONO
-   ============================================================ */
-
 /* Space Mono – Regular (400) */
 @font-face {
   font-family: 'Space Mono';
-  src: url('assets/fonts/space-mono-v13-latin-regular.woff2') format('woff2');
+  src: url('./fonts/space-mono-v17-latin-700italic.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,7 +10,7 @@
 /* Space Mono – Regular Italic (400) */
 @font-face {
   font-family: 'Space Mono';
-  src: url('assets/fonts/space-mono-v13-latin-italic.woff2') format('woff2');
+  src: url('./fonts/space-mono-v17-latin-700.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -35,7 +19,7 @@
 /* Space Mono – Bold (700) */
 @font-face {
   font-family: 'Space Mono';
-  src: url('assets/fonts/space-mono-v13-latin-700.woff2') format('woff2');
+  src: url('./fonts/space-mono-v17-latin-italic.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -44,21 +28,16 @@
 /* Space Mono – Bold Italic (700) */
 @font-face {
   font-family: 'Space Mono';
-  src: url('assets/fonts/space-mono-v13-latin-700italic.woff2') format('woff2');
+  src: url('./fonts/space-mono-v17-latin-regular.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
-
-/* ============================================================
-   SPACE GROTESK
-   ============================================================ */
-
 /* Space Grotesk – Light (300) */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('assets/fonts/space-grotesk-v16-latin-300.woff2') format('woff2');
+  src: url('./fonts/space-grotesk-v22-latin-700.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -67,7 +46,7 @@
 /* Space Grotesk – Regular (400) */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('assets/fonts/space-grotesk-v16-latin-regular.woff2') format('woff2');
+  src: url('./fonts/space-grotesk-v22-latin-500.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -76,7 +55,7 @@
 /* Space Grotesk – Medium (500) */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('assets/fonts/space-grotesk-v16-latin-500.woff2') format('woff2');
+  src: url('./fonts/space-grotesk-v22-latin-300.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -85,7 +64,7 @@
 /* Space Grotesk – SemiBold (600) */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('assets/fonts/space-grotesk-v16-latin-600.woff2') format('woff2');
+  src: url('./fonts/space-grotesk-v22-latin-600.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -94,21 +73,8 @@
 /* Space Grotesk – Bold (700) */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('assets/fonts/space-grotesk-v16-latin-700.woff2') format('woff2');
+  src: url('./fonts/space-grotesk-v22-latin-regular.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
-
-
-/* ============================================================
-   VERWENDUNG (Beispiel)
-   ============================================================ */
-
-/*
-  Monospace (Code, Labels, Tags):
-  font-family: 'Space Mono', monospace;
-
-  Fließtext & Headlines:
-  font-family: 'Space Grotesk', sans-serif;
-*/
