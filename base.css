@@ -183,8 +183,8 @@ nav {
   gap: 10px;
 }
 .logo-icon-nav {
-  width: 36px;
-  height: 36px;
+  width: 170px;
+  height: 100px;
   flex-shrink: 0;
 }
 .logo-text-nav {
