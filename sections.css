@@ -38,7 +38,7 @@
   position: relative;
   overflow: hidden;
   padding-top: var(--nav-h);
-  background: linear-gradient(35deg, #1c1c1c 50%, #08463b 80%);
+  background: linear-gradient(35deg, #1c1c1c 50%, #08463b 55%);
 }
 .hero-content {
   text-align: center;
