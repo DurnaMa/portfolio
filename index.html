@@ -4,32 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mahir Durna – Frontend Developer</title>
-    <link rel="shortcut icon" href="img/logo_fuer_dunklen_hintergrund.png" type="image/x-icon">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="sections.css">
+    <link rel="shortcut icon" href="img/logo_fuer_dunklen_hintergrund.png" type="image/x-icon" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="sections.css" />
   </head>
-  <body>
+  <body onload="init()">
     <!-- ══════════ HERO ══════════ -->
     <section id="hero">
-      <nav>
-        <div class="nav-inner">
-        <div class="nav-left ">
-          <div class="lang-toggle">
-            <span class="active">EN</span>
-            <span>DE</span>
-          </div>
-          <ul class="nav-links">
-            <li><a href="#about">About me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-          </ul>
-        </div>
-        <a href="#hero" class="logo-nav">
-          <img class="logo-icon-nav" src="img/logo_fuer_dunklen_hintergrund.png" alt="MD">
-        </a>
-        </div>
-      </nav>
+      <include-html src="./templates/header.html"></include-html>
+      <!--      <nav>-->
+      <!--        <div class="nav-inner">-->
+      <!--        <div class="nav-left ">-->
+      <!--          <div class="lang-toggle">-->
+      <!--            <span class="active">EN</span>-->
+      <!--            <span>DE</span>-->
+      <!--          </div>-->
+      <!--          <ul class="nav-links">-->
+      <!--            <li><a href="#about">About me</a></li>-->
+      <!--            <li><a href="#skills">Skills</a></li>-->
+      <!--            <li><a href="#portfolio">Projects</a></li>-->
+      <!--          </ul>-->
+      <!--        </div>-->
+      <!--        <a href="#hero" class="logo-nav">-->
+      <!--          <img class="logo-icon-nav" src="img/logo_fuer_dunklen_hintergrund.png" alt="MD">-->
+      <!--        </a>-->
+      <!--        </div>-->
+      <!--      </nav>-->
       <div class="hero-content">
         <p class="hero-subtitle">Frontend Developer</p>
         <h1 class="hero-title">Mahir Durna</h1>
@@ -358,22 +359,23 @@
       </div>
     </section>
     <!-- ══════════ FOOTER ══════════ -->
-    <footer>
-      <div class="footer-inner">
-      <div>
-        <div class="footer-logo">
-          <img class="logo-icon-nav" src="img/logo_fuer_dunklen_hintergrund.png" alt="MD">
-        </div>
-      </div>
-      <div class="footer-center">© Mahir Durna 2026</div>
-      <div class="footer-right">
-        <a href="https://github.com/DurnaMa" target="_blank">Github</a>
-        <a href="https://linkedin.com/in/mahir-durna" target="_blank">LinkedIn</a>
-        <a href="mailto:contact@mahir-durna.de">Email</a>
-        <a href="#">Legal Notice</a>
-      </div>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <include-html src="./templates/footer.html"></include-html>
+    <!--    <footer>-->
+    <!--      <div class="footer-inner">-->
+    <!--      <div>-->
+    <!--        <div class="footer-logo">-->
+    <!--          <img class="logo-icon-nav" src="img/logo_fuer_dunklen_hintergrund.png" alt="MD">-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--      <div class="footer-center">© Mahir Durna 2026</div>-->
+    <!--      <div class="footer-right">-->
+    <!--        <a href="https://github.com/DurnaMa" target="_blank">Github</a>-->
+    <!--        <a href="https://linkedin.com/in/mahir-durna" target="_blank">LinkedIn</a>-->
+    <!--        <a href="mailto:contact@mahir-durna.de">Email</a>-->
+    <!--        <a href="#">Legal Notice</a>-->
+    <!--      </div>-->
+    <!--      </div>-->
+    <!--    </footer>-->
+    <script src="./script.js"></script>
   </body>
 </html>

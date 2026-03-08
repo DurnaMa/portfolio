@@ -1,10 +1,10 @@
 /* ============================================================
-   impressum.css – Impressum / Legal Notice
+   datenschutz.css – Datenschutzerklärung
    Matches portfolio design: dark theme, teal accent
    WCAG 2.1 AA compliant, fully responsive
    ============================================================ */
 
-/* Local fonts – relative path from impressum/ to root */
+/* Local fonts – relative path from datenschutz/ to root */
 @import url('../fonts.css');
 
 /* ── CSS Custom Properties ─────────────────────────────────── */
@@ -87,9 +87,8 @@ body {
   min-height: 100vh;
 }
 
-/* ── Impressum main container ───────────────────────────────── */
-.legal-notice,
-.impressum {
+/* ── Datenschutz main container ─────────────────────────────── */
+.dataprotection {
   flex: 1;
   width: 100%;
   max-width: var(--max-width);
@@ -98,8 +97,7 @@ body {
 }
 
 /* ── Page title ─────────────────────────────────────────────── */
-.legal-notice h1,
-.impressum h1 {
+.dataprotection h1 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.25rem);
   font-weight: 800;
@@ -111,8 +109,7 @@ body {
   border-bottom: 1px solid var(--border-strong);
 }
 
-.legal-notice h1::before,
-.impressum h1::before {
+.dataprotection h1::before {
   content: '// ';
   font-family: var(--font-mono);
   font-size: 0.6em;
@@ -122,10 +119,9 @@ body {
 }
 
 /* ── Section headings ───────────────────────────────────────── */
-.legal-notice h2,
-.impressum h2 {
+.dataprotection h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: 0.01em;
@@ -137,10 +133,9 @@ body {
 }
 
 /* ── Sub-headings ───────────────────────────────────────────── */
-.legal-notice h3,
-.impressum h3 {
+.dataprotection h3 {
   font-family: var(--font-mono);
-  font-size: 0.83rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: 0.08em;
@@ -151,63 +146,29 @@ body {
 }
 
 /* ── Body text ──────────────────────────────────────────────── */
-.legal-notice p,
-.impressum p {
+.dataprotection p {
   font-size: 1rem;
   color: var(--accent);
   line-height: 1.8;
   margin-bottom: 1rem;
 }
 
-/* ── Highlighted info blocks (address, contact) ─────────────── */
-.legal-notice .info-block,
-.impressum .info-block {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  margin: 1rem 0 1.5rem;
-}
-
-.legal-notice .info-block p,
-.impressum .info-block p {
-  margin-bottom: 0.25rem;
+/* Responsible person emphasis */
+.dataprotection > p:nth-of-type(2) {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
-  color: var(--text-primary);
-  letter-spacing: 0.02em;
-}
-
-.legal-notice .info-block p:last-child,
-.impressum .info-block p:last-child {
-  margin-bottom: 0;
-}
-
-/* ── Bold inline text ───────────────────────────────────────── */
-.legal-notice strong,
-.impressum strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* ── Italic / emphasis ──────────────────────────────────────── */
-.legal-notice em,
-.impressum em {
   color: var(--accent);
-  font-style: normal;
-  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
 }
 
 /* ── Lists ──────────────────────────────────────────────────── */
-.legal-notice ul,
-.impressum ul {
+.dataprotection ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 1.25rem;
 }
 
-.legal-notice ul li,
-.impressum ul li {
+.dataprotection ul li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.6rem;
@@ -215,8 +176,7 @@ body {
   line-height: 1.75;
 }
 
-.legal-notice ul li::before,
-.impressum ul li::before {
+.dataprotection ul li::before {
   content: '▸';
   position: absolute;
   left: 0;
@@ -226,8 +186,7 @@ body {
 }
 
 /* ── Links ──────────────────────────────────────────────────── */
-.legal-notice a,
-.impressum a {
+.dataprotection a {
   color: var(--accent);
   text-decoration: underline;
   text-decoration-color: rgba(46, 207, 179, 0.4);
@@ -238,36 +197,45 @@ body {
   word-break: break-all;
 }
 
-.legal-notice a:hover,
-.legal-notice a:focus-visible,
-.impressum a:hover,
-.impressum a:focus-visible {
+.dataprotection a:hover,
+.dataprotection a:focus-visible {
   color: var(--text-primary);
   text-decoration-color: var(--accent);
 }
 
 /* ── Horizontal rule ────────────────────────────────────────── */
-.legal-notice hr,
-.impressum hr {
+.dataprotection hr {
   border: none;
   border-top: 1px solid var(--border-strong);
   margin: var(--section-gap) 0;
 }
 
-/* ── Date line ──────────────────────────────────────────────── */
-.legal-notice .date,
-.impressum .date,
-[class*='date'] {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+/* ── Italic / small print ───────────────────────────────────── */
+.dataprotection em {
+  font-style: italic;
+  font-size: 0.875rem;
   color: var(--text-muted);
-  margin-top: var(--section-gap);
-  letter-spacing: 0.04em;
+  line-height: 1.7;
 }
 
-/* ── Empty paragraphs ───────────────────────────────────────── */
-.legal-notice p:empty,
-.impressum p:empty {
+.dataprotection em a {
+  color: var(--text-muted);
+  text-decoration-color: rgba(122, 152, 152, 0.4);
+}
+
+.dataprotection em a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ── Section card grouping ──────────────────────────────────── */
+.dataprotection h2 + p,
+.dataprotection h2 + ul {
+  margin-top: 0.25rem;
+}
+
+/* ── Empty paragraphs (spacers in source) ───────────────────── */
+.dataprotection p:empty {
   display: none;
 }
 
@@ -275,14 +243,16 @@ body {
 
 /* Tablet */
 @media (max-width: 768px) {
-  .legal-notice,
-  .impressum {
+  .dataprotection {
     padding: 2rem 1.25rem 4rem;
   }
 
-  .legal-notice h2,
-  .impressum h2 {
-    font-size: 1.2rem;
+  .dataprotection h2 {
+    font-size: 1.25rem;
+  }
+
+  .dataprotection ul li {
+    font-size: 0.95rem;
   }
 }
 
@@ -292,37 +262,26 @@ body {
     --section-gap: 2rem;
   }
 
-  .legal-notice,
-  .impressum {
+  .dataprotection {
     padding: 1.5rem 1rem 3rem;
   }
 
-  .legal-notice h1,
-  .impressum h1 {
+  .dataprotection h1 {
     font-size: 1.75rem;
   }
 
-  .legal-notice h2,
-  .impressum h2 {
-    font-size: 1.05rem;
+  .dataprotection h2 {
+    font-size: 1.1rem;
     padding-left: 0.65rem;
   }
 
-  .legal-notice h3,
-  .impressum h3 {
+  .dataprotection h3 {
     font-size: 0.78rem;
   }
 
-  .legal-notice p,
-  .legal-notice ul li,
-  .impressum p,
-  .impressum ul li {
+  .dataprotection p,
+  .dataprotection ul li {
     font-size: 0.925rem;
-  }
-
-  .legal-notice .info-block,
-  .impressum .info-block {
-    padding: 1rem;
   }
 }
 
@@ -341,17 +300,11 @@ body {
 
 /* ── High contrast mode ─────────────────────────────────────── */
 @media (forced-colors: active) {
-  .legal-notice h2,
-  .impressum h2 {
+  .dataprotection h2 {
     border-left-color: Highlight;
     color: Highlight;
   }
-  .legal-notice ul li::before,
-  .impressum ul li::before {
+  .dataprotection ul li::before {
     color: Highlight;
-  }
-  .legal-notice .info-block,
-  .impressum .info-block {
-    border-color: Highlight;
   }
 }
