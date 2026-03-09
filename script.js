@@ -1,5 +1,6 @@
-function init() {
-  includeHTML();
+async function init() {
+  await includeHTML();
+  initBurger();
 }
 
 async function includeHTML() {
@@ -72,6 +73,26 @@ dots.forEach((dot, i) => {
   });
 });
 
+function initBurger() {
+  const burger = document.querySelector('.hamburger');
+  const navMobile = document.querySelector('.nav-mobile');
+
+  if (!burger || !navMobile) return;
+
+  burger.addEventListener('click', () => {
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', !isOpen);
+    navMobile.classList.toggle('open');
+  });
+
+  // Menü schließen wenn ein Link geklickt wird
+  navMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.setAttribute('aria-expanded', 'false');
+      navMobile.classList.remove('open');
+    });
+  });
+}
 // ── CONTACT FORM → mail.php ──
 const form = document.getElementById('contact-form');
 const submitBtn = form.querySelector('.btn-submit');
