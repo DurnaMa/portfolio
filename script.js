@@ -1,6 +1,7 @@
 async function init() {
   await includeHTML();
   initBurger();
+  initProjectPreview();
 }
 
 async function includeHTML() {
@@ -214,6 +215,50 @@ function showFormFeedback(text, type) {
   `;
   form.appendChild(msg);
   setTimeout(() => msg.remove(), 5000);
+}
+
+// ── PROJECT HOVER PREVIEW ──
+function initProjectPreview() {
+  const items = document.querySelectorAll('.project-item');
+  const previewImg = document.querySelector('.preview-img');
+  const previewFrame = document.querySelector('.preview-frame');
+  if (!items.length || !previewImg || !previewFrame) return;
+
+  const projectsList = document.querySelector('.projects-list');
+  projectsList.addEventListener('mouseleave', () => {
+    items.forEach((i) => i.classList.remove('active'));
+    previewImg.classList.remove('visible');
+    previewFrame.classList.remove('show-placeholder');
+    setTimeout(() => { previewImg.src = ''; }, 350);
+  });
+
+  items.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      const src = item.dataset.img;
+      const alt = item.dataset.alt || '';
+
+      items.forEach((i) => i.classList.remove('active'));
+      item.classList.add('active');
+
+      if (previewImg.getAttribute('src') === src) return;
+
+      previewImg.classList.remove('visible');
+      previewFrame.classList.remove('show-placeholder');
+
+      setTimeout(() => {
+        previewImg.src = src;
+        previewImg.alt = alt;
+        previewImg.onload = () => {
+          previewImg.classList.add('visible');
+          previewFrame.classList.remove('show-placeholder');
+        };
+        previewImg.onerror = () => {
+          previewImg.classList.remove('visible');
+          previewFrame.classList.add('show-placeholder');
+        };
+      }, 180);
+    });
+  });
 }
 
 // ── SMOOTH NAV HIGHLIGHT ──
