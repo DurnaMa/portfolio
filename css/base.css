@@ -30,7 +30,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
-  line-height: 1.6;
+  line-height: 2.6;
   overflow-x: hidden;
 }
 a {
@@ -115,6 +115,13 @@ section {
   padding: 0.625rem 1.25rem;
 }
 
+.hero-content {
+  transition: transform 0.3s ease;
+}
+
+body.menu-open .hero-content {
+  transform: translateY(220px);
+}
 /* === NAV === */
 nav {
   position: fixed;
@@ -218,31 +225,39 @@ nav {
 .hamburger[aria-expanded='true'] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
+
+/* === MOBILE NAV – floating card === */
 .nav-mobile {
   display: none;
   position: fixed;
-  top: var(--nav-h);
-  left: 0;
-  right: 0;
-  background: rgba(10, 10, 10, 0.97);
+  top: calc(var(--nav-h) + 1.5rem);
+  right: 1rem;
+  background: #0d1e1b;
   backdrop-filter: blur(16px);
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem var(--pad);
-  border-bottom: 1px solid var(--border);
+  gap: 0.8rem;
+  padding: 2rem 2.25rem;
+  border: 1px solid var(--teal);
+  border-radius: var(--radius);
   z-index: 99;
+  box-shadow: 0 0 32px rgba(45, 212, 191, 0.1);
 }
 .nav-mobile.open {
   display: flex;
 }
 .nav-mobile a {
-  font-size: 1.2rem;
-  color: var(--muted);
+  font-size: 1.1rem;
+  color: var(--text);
   font-family: 'Space Mono', monospace;
   padding-block: 0.25rem;
+  transition: color 0.2s;
 }
 .nav-mobile a:hover {
   color: var(--teal);
+}
+.nav-mobile .lang-toggle {
+  margin-top: 0.25rem;
+  align-self: flex-start;
 }
 
 /* === FOOTER === */
@@ -344,7 +359,7 @@ footer {
   }
 }
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-links, .nav-left {
     display: none;
   }
   .hamburger {

@@ -73,94 +73,136 @@ dots.forEach((dot, i) => {
   });
 });
 
+// ── BURGER MENU ──
+function openMenu(burger, navMobile) {
+  burger.setAttribute('aria-expanded', 'true');
+  navMobile.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.body.classList.add('menu-open');
+}
+
+function closeMenu(burger, navMobile) {
+  burger.setAttribute('aria-expanded', 'false');
+  navMobile.classList.remove('open');
+  document.body.style.overflow = '';
+  document.body.classList.remove('menu-open');
+}
+
+function addBurgerClickListener(burger, navMobile) {
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMenu(burger, navMobile) : openMenu(burger, navMobile);
+  });
+}
+
+function addLinkListeners(burger, navMobile) {
+  navMobile.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => closeMenu(burger, navMobile));
+  });
+}
+
+function addOutsideClickListener(burger, navMobile) {
+  document.addEventListener('click', (e) => {
+    const isOpen = navMobile.classList.contains('open');
+    const clickedOutside = !navMobile.contains(e.target) && !burger.contains(e.target);
+    if (isOpen && clickedOutside) closeMenu(burger, navMobile);
+  });
+}
+
+function addEscapeListener(burger, navMobile) {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu(burger, navMobile);
+  });
+}
+
 function initBurger() {
   const burger = document.querySelector('.hamburger');
   const navMobile = document.querySelector('.nav-mobile');
-
   if (!burger || !navMobile) return;
-
-  burger.addEventListener('click', () => {
-    const isOpen = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', !isOpen);
-    navMobile.classList.toggle('open');
-  });
-
-  // Menü schließen wenn ein Link geklickt wird
-  navMobile.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.setAttribute('aria-expanded', 'false');
-      navMobile.classList.remove('open');
-    });
-  });
+  addBurgerClickListener(burger, navMobile);
+  addLinkListeners(burger, navMobile);
+  addOutsideClickListener(burger, navMobile);
+  addEscapeListener(burger, navMobile);
 }
+
 // ── CONTACT FORM → mail.php ──
 const form = document.getElementById('contact-form');
 const submitBtn = form.querySelector('.btn-submit');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+function getFormValues() {
+  return {
+    name: form.querySelector('#name').value.trim(),
+    email: form.querySelector('#email').value.trim(),
+    message: form.querySelector('#message').value.trim(),
+    privacy: form.querySelector('#privacy').checked,
+  };
+}
 
-  const name = form.querySelector('#name').value.trim();
-  const email = form.querySelector('#email').value.trim();
-  const message = form.querySelector('#message').value.trim();
-  const privacy = form.querySelector('#privacy').checked;
-
-  // Client-side validation
+function validateForm(name, email, message, privacy) {
   if (!name || !email || !message) {
     showFormFeedback('Please fill in all fields.', 'error');
-    return;
+    return false;
   }
   if (!privacy) {
     showFormFeedback('Please accept the privacy policy.', 'error');
-    return;
+    return false;
   }
+  return true;
+}
 
-  // Disable button while sending
-  submitBtn.textContent = 'Sending…';
-  submitBtn.disabled = true;
-
-  try {
-    const response = await fetch('mail.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message }),
-    });
-
-    if (response.ok) {
-      showFormFeedback("Message sent! I'll get back to you soon.", 'success');
-      submitBtn.textContent = 'Sent ✓';
-      submitBtn.style.borderColor = 'var(--teal)';
-      submitBtn.style.color = 'var(--teal)';
-      form.reset();
-
-      // Reset button after 4 seconds
-      setTimeout(() => {
-        submitBtn.textContent = 'Say Hello ;)';
-        submitBtn.disabled = false;
-        submitBtn.style.borderColor = '';
-        submitBtn.style.color = '';
-      }, 4000);
-    } else {
-      throw new Error(`Server responded with status ${response.status}`);
-    }
-  } catch (error) {
-    console.error('Mail error:', error);
-    showFormFeedback('Something went wrong. Please try again or send an email directly.', 'error');
+function resetSubmitBtn() {
+  setTimeout(() => {
     submitBtn.textContent = 'Say Hello ;)';
     submitBtn.disabled = false;
+    submitBtn.style.borderColor = '';
+    submitBtn.style.color = '';
+  }, 4000);
+}
+
+function handleFormSuccess() {
+  showFormFeedback("Message sent! I'll get back to you soon.", 'success');
+  submitBtn.textContent = 'Sent ✓';
+  submitBtn.style.borderColor = 'var(--teal)';
+  submitBtn.style.color = 'var(--teal)';
+  form.reset();
+  resetSubmitBtn();
+}
+
+function handleFormError(error) {
+  console.error('Mail error:', error);
+  showFormFeedback('Something went wrong. Please try again or send an email directly.', 'error');
+  submitBtn.textContent = 'Say Hello ;)';
+  submitBtn.disabled = false;
+}
+
+async function sendMail(name, email, message) {
+  const response = await fetch('mail.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, message }),
+  });
+  if (!response.ok) throw new Error(`Server responded with status ${response.status}`);
+  return response;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const { name, email, message, privacy } = getFormValues();
+  if (!validateForm(name, email, message, privacy)) return;
+  submitBtn.textContent = 'Sending…';
+  submitBtn.disabled = true;
+  try {
+    await sendMail(name, email, message);
+    handleFormSuccess();
+  } catch (error) {
+    handleFormError(error);
   }
 });
 
-/**
- * Shows a small feedback message below the form.
- * @param {string} text - Message to display
- * @param {'success'|'error'} type - Visual style
- */
 function showFormFeedback(text, type) {
-  // Remove any existing feedback
   const existing = form.querySelector('.form-feedback');
   if (existing) existing.remove();
-
   const msg = document.createElement('p');
   msg.className = 'form-feedback';
   msg.textContent = text;
@@ -171,8 +213,6 @@ function showFormFeedback(text, type) {
     color: ${type === 'success' ? 'var(--teal)' : '#ff6b6b'};
   `;
   form.appendChild(msg);
-
-  // Auto-remove after 5 seconds
   setTimeout(() => msg.remove(), 5000);
 }
 
@@ -180,14 +220,16 @@ function showFormFeedback(text, type) {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
+function highlightActiveLink(id) {
+  navLinks.forEach((link) => {
+    link.style.color = link.getAttribute('href') === `#${id}` ? 'var(--teal)' : '';
+  });
+}
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => {
-          link.style.color = link.getAttribute('href') === `#${entry.target.id}` ? 'var(--teal)' : '';
-        });
-      }
+      if (entry.isIntersecting) highlightActiveLink(entry.target.id);
     });
   },
   { threshold: 0.4 }
