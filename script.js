@@ -218,46 +218,46 @@ function showFormFeedback(text, type) {
 }
 
 // ── PROJECT HOVER PREVIEW ──
-function initProjectPreview() {
-  const items = document.querySelectorAll('.project-item');
-  const previewImg = document.querySelector('.preview-img');
-  const previewFrame = document.querySelector('.preview-frame');
-  if (!items.length || !previewImg || !previewFrame) return;
+async function loadProjects() {
+  const data = await fetch('./projects.json').then(r => r.json());
+  return Object.fromEntries(data.map(p => [p.id, p]));
+}
 
-  const projectsList = document.querySelector('.projects-list');
-  projectsList.addEventListener('mouseleave', () => {
-    items.forEach((i) => i.classList.remove('active'));
-    previewImg.classList.remove('visible');
-    previewFrame.classList.remove('show-placeholder');
-    setTimeout(() => { previewImg.src = ''; }, 350);
-  });
+function clearPreview(items, img, frame) {
+  items.forEach(i => i.classList.remove('active'));
+  img.classList.remove('visible');
+  frame.classList.remove('show-placeholder');
+  setTimeout(() => { img.src = ''; }, 350);
+}
 
-  items.forEach((item) => {
-    item.addEventListener('mouseenter', () => {
-      const src = item.dataset.img;
-      const alt = item.dataset.alt || '';
+function loadPreview(img, frame, project) {
+  if (img.src.endsWith(project.img)) return;
+  img.classList.remove('visible');
+  setTimeout(() => {
+    Object.assign(img, { src: project.img, alt: project.alt });
+    img.onload  = () => img.classList.add('visible');
+    img.onerror = () => frame.classList.add('show-placeholder');
+  }, 180);
+}
 
-      items.forEach((i) => i.classList.remove('active'));
-      item.classList.add('active');
+async function initProjectPreview() {
+  const projects = await loadProjects();
+  const items    = [...document.querySelectorAll('.project-item')];
+  const img      = document.querySelector('.preview-img');
+  const frame    = document.querySelector('.preview-frame');
+  if (!items.length || !img || !frame) return;
 
-      if (previewImg.getAttribute('src') === src) return;
+  document.querySelector('.projects-list')
+    .addEventListener('mouseleave', () => clearPreview(items, img, frame));
 
-      previewImg.classList.remove('visible');
-      previewFrame.classList.remove('show-placeholder');
-
-      setTimeout(() => {
-        previewImg.src = src;
-        previewImg.alt = alt;
-        previewImg.onload = () => {
-          previewImg.classList.add('visible');
-          previewFrame.classList.remove('show-placeholder');
-        };
-        previewImg.onerror = () => {
-          previewImg.classList.remove('visible');
-          previewFrame.classList.add('show-placeholder');
-        };
-      }, 180);
-    });
+  items.forEach(item => {
+    [item, item.querySelector('.project-arrow')].forEach(el =>
+      el?.addEventListener('mouseenter', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        loadPreview(img, frame, projects[item.dataset.id]);
+      })
+    );
   });
 }
 

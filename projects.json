@@ -1,0 +1,23 @@
+[
+  {
+    "id": "join",
+    "name": "Join",
+    "description": "Kanban Project Tool",
+    "img": "./img/logo_basic.png",
+    "alt": "Join – Kanban Project Tool"
+  },
+  {
+    "id": "el-pollo-loco",
+    "name": "El Pollo Loco",
+    "description": "Jump & Run Game",
+    "img": "./img/logo_fuer_dunklen_hintergrund.png",
+    "alt": "El Pollo Loco – Jump & Run Game"
+  },
+  {
+    "id": "da-bubble",
+    "name": "DA Bubble",
+    "description": "Slack Clone",
+    "img": "./img/logo_basic.png",
+    "alt": "DA Bubble – Slack Clone"
+  }
+]
