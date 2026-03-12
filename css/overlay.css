@@ -1,0 +1,212 @@
+/* ══════════════════════════════════════════
+   PROJECT OVERLAY  (add to sections.css)
+   ══════════════════════════════════════════ */
+
+/* Backdrop */
+#project-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+#project-overlay.project-preview {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Card */
+.overlay-card {
+  position: relative;
+  width: min(92vw, 1060px);
+  background: linear-gradient(135deg, #0d2320 0%, #0a1a17 60%, #061210 100%);
+  border: 1px solid rgba(45, 212, 191, 0.18);
+  border-radius: 24px;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3.75rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(28px) scale(0.97);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#project-overlay.project-preview .overlay-card {
+  transform: translateY(0) scale(1);
+}
+
+/* Close button */
+.overlay-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.25s;
+}
+.overlay-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: rotate(90deg);
+}
+
+/* Left column */
+.overlay-left h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.overlay-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--teal);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.875rem;
+}
+.overlay-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+/* Tech badges */
+.overlay-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.overlay-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--teal);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  letter-spacing: 0.04em;
+}
+
+/* CTA buttons */
+.overlay-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.overlay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 24px;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  min-height: 44px;
+}
+.overlay-btn:hover {
+  border-color: var(--teal);
+  background: rgba(45, 212, 191, 0.08);
+  transform: translateY(-2px);
+}
+.overlay-btn svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Right column – mockup */
+.overlay-mockup {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+  aspect-ratio: 16 / 10;
+  background: #0d1a17;
+  position: relative;
+}
+.overlay-mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Next project */
+.overlay-next {
+  position: absolute;
+  bottom: clamp(1.25rem, 3vw, 2rem);
+  right: clamp(1.5rem, 4vw, 3.75rem);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--teal);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  padding: 0;
+  transition: gap 0.2s;
+}
+.overlay-next:hover {
+  gap: 14px;
+}
+.overlay-next svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--teal);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .overlay-card {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem 4rem;
+    gap: 1.75rem;
+  }
+  .overlay-next {
+    bottom: 1.25rem;
+    right: 1.5rem;
+  }
+}
