@@ -404,6 +404,6 @@ function initTicker() {
       <span class="ticker-dot"></span>${text}
     </span>`).join('');
 
-  track.innerHTML = html.repeat(4);
+  track.innerHTML = html.repeat(8);
   track.style.setProperty('--ticker-sets', '4');
 }

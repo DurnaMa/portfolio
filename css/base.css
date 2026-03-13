@@ -74,9 +74,7 @@ section {
 .section-label {
   font-family: 'Space Mono', monospace;
   color: var(--teal);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.75rem;
+  font-size: 22px;
   display: block;
 }
 .btn-outline,
@@ -165,7 +163,7 @@ nav {
 }
 .lang-toggle span {
   padding: 5px 12px;
-  font-size: 0.75rem;
+  font-size: 13px;
   font-weight: 600;
   font-family: 'Space Mono', monospace;
   cursor: pointer;

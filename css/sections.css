@@ -418,6 +418,11 @@
   opacity: 1;
 }
 
+.project {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 /* Preview panel */
 .project-preview {
   position: sticky;
@@ -425,10 +430,9 @@
 }
 .preview-frame {
   border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid rgba(45, 212, 191, 0.2);
+  overflow: inherit;
   background: #0d1a17;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 10 / 6;
   position: relative;
 }
 .preview-img {
@@ -550,13 +554,9 @@
 }
 .carousel-btn {
   background: none;
-  border: 1px solid var(--border);
   color: var(--text);
   font-size: 1.1rem;
   cursor: pointer;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
