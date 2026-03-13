@@ -410,3 +410,9 @@ footer {
     gap: 2.5rem;
   }
 }
+
+@media (min-width: 769px) {
+  .nav-mobile.open {
+    display: none !important;
+  }
+}
