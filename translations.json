@@ -1,0 +1,82 @@
+{
+  "EN": {
+    "hero.subtitle": "Frontend Developer",
+    "hero.btnWork": "Check my work",
+    "hero.btnContact": "Contact me",
+
+    "about.label": "Who I Am",
+    "about.heading": "About&nbsp;me",
+    "about.text": "Hey there, I'm Mahir! Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?",
+    "about.li1": "Where are you based? Would you be open to working remotely or potentially relocating?",
+    "about.li2": "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?",
+    "about.li3": "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and collaboration.",
+
+    "skills.label": "Technologies",
+    "skills.heading": "Skill Set",
+    "skills.text": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies.",
+    "skills.needSkill": "You need <span>another skill?</span>",
+    "skills.needDesc": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "skills.cta": "Let's Talk",
+
+    "portfolio.label": "Portfolio",
+    "portfolio.heading": "Featured Projects",
+    "portfolio.desc": "Explore a selection of my work here – Interact with projects to see my skills in action.",
+
+    "refs.heading": "What my colleagues say about me",
+
+    "contact.label": "Contact me",
+    "contact.title": "Let's work<br>together",
+    "contact.subtitle": "Got a problem to solve?",
+    "contact.desc": "Encourage people to contact you and describe what role you are interested in.",
+    "contact.cta": "Let's talk!",
+
+    "form.name.label": "What's your name?",
+    "form.name.ph": "Your name goes here",
+    "form.email.label": "What's your email?",
+    "form.email.ph": "youremail@email.com",
+    "form.msg.label": "How can I help you?",
+    "form.msg.ph": "Hello Mahir, I am interested in…",
+    "form.privacy": "I've read the <a href='datenschutz/datenschutz.html'>privacy policy</a> and agree to the processing of my data as outlined.",
+    "form.submit": "Say Hello ;)"
+  },
+  "DE": {
+    "hero.subtitle": "Frontend-Entwickler",
+    "hero.btnWork": "Meine Projekte",
+    "hero.btnContact": "Kontakt aufnehmen",
+
+    "about.label": "Wer ich bin",
+    "about.heading": "Über&nbsp;mich",
+    "about.text": "Hey, ich bin Mahir! Schreib hier etwas über dich, das mit IT zu tun hat. Warum begeisterst du dich fürs Programmieren? Was inspiriert dich, deine Fähigkeiten weiterzuentwickeln?",
+    "about.li1": "Wo lebst du? Bist du offen für Remote-Arbeit oder einen möglichen Umzug?",
+    "about.li2": "Zeig deine Aufgeschlossenheit. Bist du begeistert davon, neue Technologien zu lernen und dich stetig weiterzuentwickeln?",
+    "about.li3": "Eine kurze Beschreibung deines Problemlösungsansatzes – analytisches Denken, Kreativität, Ausdauer und Teamarbeit.",
+
+    "skills.label": "Technologien",
+    "skills.heading": "Meine Fähigkeiten",
+    "skills.text": "Eine kurze Vorstellung deiner Fähigkeiten. Hebe deine Erfahrung mit verschiedenen Frontend-Technologien hervor und betone deine Offenheit für neue Tools.",
+    "skills.needSkill": "Du brauchst <span>eine andere Fähigkeit?</span>",
+    "skills.needDesc": "Melde dich gerne bei mir. Ich freue mich darauf, mein Wissen zu erweitern.",
+    "skills.cta": "Kontakt aufnehmen",
+
+    "portfolio.label": "Portfolio",
+    "portfolio.heading": "Ausgewählte Projekte",
+    "portfolio.desc": "Entdecke eine Auswahl meiner Arbeit – interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+
+    "refs.heading": "Was meine Kollegen über mich sagen",
+
+    "contact.label": "Kontakt",
+    "contact.title": "Lass uns<br>zusammenarbeiten",
+    "contact.subtitle": "Ein Problem zu lösen?",
+    "contact.desc": "Beschreib hier, welche Rolle dich interessiert und welchen Mehrwert du für Projekte mitbringst.",
+    "contact.cta": "Schreib mir!",
+
+    "form.name.label": "Wie heißt du?",
+    "form.name.ph": "Dein Name",
+    "form.email.label": "Deine E-Mail-Adresse?",
+    "form.email.ph": "deine@email.de",
+    "form.msg.label": "Wie kann ich helfen?",
+    "form.msg.ph": "Hallo Mahir, ich interessiere mich für…",
+    "form.privacy": "Ich habe die <a href='datenschutz/datenschutz.html'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "form.submit": "Hallo sagen ;)"
+  }
+}

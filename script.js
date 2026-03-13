@@ -3,6 +3,7 @@
 /** Bootstraps the app on page load. */
 async function init() {
   await includeHTML();
+  await loadTranslations();   // ← lädt translations.json
   initBurger();
   await initProjectPreview();
   initLangToggle();
@@ -20,15 +21,53 @@ async function includeHTML() {
   }
 }
 
+// ── TRANSLATIONS ──
+
+let translations = {};
+
+/** Fetches translations.json once and stores it in memory. */
+async function loadTranslations() {
+  try {
+    const resp = await fetch('./translations.json');
+    translations = await resp.json();
+  } catch (e) {
+    console.error('Could not load translations.json', e);
+  }
+}
+
+/**
+ * Applies all translations for the given language code to every
+ * element that carries a [data-i18n] attribute.
+ * @param {'EN'|'DE'} lang
+ */
+function applyLang(lang) {
+  const dict = translations[lang];
+  if (!dict) return;
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    const value = dict[key];
+    if (value === undefined) return;
+
+    // Inputs / textareas use placeholder, everything else uses innerHTML
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = value;
+    } else {
+      el.innerHTML = value;
+    }
+  });
+}
+
 // ── LANGUAGE TOGGLE ──
 
-/** Activates the clicked language button and deactivates the others. */
+/** Activates the clicked language button and applies the matching translations. */
 function initLangToggle() {
   const buttons = document.querySelectorAll('.lang-toggle span');
   buttons.forEach((btn) =>
     btn.addEventListener('click', () => {
       buttons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
+      applyLang(btn.textContent.trim()); // 'EN' or 'DE'
     })
   );
 }
@@ -222,45 +261,7 @@ async function loadProjects() {
   projectList = await response.json();
 }
 
-/** Builds the overlay dialog once and appends it to the body. */
-function buildOverlay() {
-  if (document.getElementById('project-overlay')) return;
 
-  const overlay = document.createElement('div');
-  overlay.id = 'project-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Project details');
-
-  overlay.innerHTML = `
-    <div class="overlay-card">
-      <button class="overlay-close" onclick="closeProjectOverlay()" aria-label="Close">✕</button>
-      <div class="overlay-left">
-        <p class="overlay-subtitle">What is this project about?</p>
-        <h2 id="overlay-title"></h2>
-        <p class="overlay-desc" id="overlay-desc"></p>
-        <div class="overlay-tags" id="overlay-tags"></div>
-        <div class="overlay-btns">
-          <a id="overlay-github" href="#" target="_blank" rel="noopener" class="overlay-btn">
-            GitHub <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-          <a id="overlay-live" href="#" target="_blank" rel="noopener" class="overlay-btn">
-            Live Test <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="overlay-right">
-        <div class="overlay-mockup">
-          <img id="overlay-img" src="" alt="" />
-        </div>
-      </div>
-      <button class="overlay-next" onclick="nextCardR()">
-        Next project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-    </div>`;
-
-  document.body.appendChild(overlay);
-}
 
 /** @param {number} index - Index in projectList */
 function renderOverlay(index) {

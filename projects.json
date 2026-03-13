@@ -18,15 +18,5 @@
     "tags": ["JavaScript", "HTML", "CSS"],
     "github": "https://github.com/DurnaMa/2dGame",
     "liveTest": "https://your-live-demo.com/el-pollo-loco"
-  },
-  {
-    "id": "da-bubble",
-    "name": "DA Bubble",
-    "description": "A Slack-inspired real-time chat app with channels, direct messages, thread replies and emoji reactions – powered by Angular and Firebase.",
-    "img": "./img/logo_basic.png",
-    "alt": "DA Bubble – Slack Clone",
-    "tags": ["Angular", "Firebase", "TypeScript"],
-    "github": "https://github.com/yourusername/da-bubble",
-    "liveTest": "https://your-live-demo.com/da-bubble"
   }
 ]
