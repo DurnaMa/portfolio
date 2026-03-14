@@ -5,9 +5,9 @@
     "description": "A Kanban-based project management tool that helps teams organize tasks with drag-and-drop boards, user assignments and real-time updates.",
     "img": "./img/join.png",
     "alt": "Join – Kanban Project Tool",
-    "tags": ["Angular", "TypeScript", "HTML", "CSS", "Firebase"],
+    "tags": ["HTML", "CSS", "Firebase"],
     "github": "https://github.com/DurnaMa/join",
-    "liveTest": "https://your-live-demo.com/join"
+    "liveTest": "https://join.mahir-durna.de/"
   },
   {
     "id": "fantasyPlatform",
@@ -17,6 +17,6 @@
     "alt": "fantasyPlatform.png – Jump & Run Game",
     "tags": ["JavaScript", "HTML", "CSS"],
     "github": "https://github.com/DurnaMa/2dGame",
-    "liveTest": "https://your-live-demo.com/el-pollo-loco"
+    "liveTest": "https://2d-game.mahir-durna.de/"
   }
 ]
