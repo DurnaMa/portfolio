@@ -11,6 +11,43 @@
   --nav-h: 64px;
   --pad: clamp(1rem, 5vw, 5rem);
   --max-w: min(1100px, 90vw);
+
+  /* Background variants */
+  --bg-dark: #1c1c1c;
+  --bg-skills: #0d1a17;
+  --bg-panel: #1a2e2a;
+
+  /* Teal variants (transparency) */
+  --teal-20: rgba(45, 212, 191, 0.2);
+  --teal-15: rgba(45, 212, 191, 0.15);
+  --teal-05: rgba(45, 212, 191, 0.05);
+
+  /* White variants (transparency) */
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-06: rgba(255, 255, 255, 0.06);
+
+  /* Tech-icon brand colors */
+  --clr-html: #e44d26;
+  --clr-css: #1572b6;
+  --clr-js: #f7df1e;
+  --clr-material: #757575;
+  --clr-ts: #3178c6;
+  --clr-angular: #dd0031;
+  --clr-firebase: #ffca28;
+  --clr-git: #f05032;
+
+  /* Hero gradient */
+  --hero-grad-end: #08463b;
+
+  /* Feedback */
+  --error: #ff6b6b;
+
+  /* Placeholder */
+  --placeholder: rgba(160, 160, 160, 0.4);
+
+  /* Contrast */
+  --black: #000;
+  --white: #fff;
 }
 
 /* === RESET === */
@@ -156,7 +193,7 @@ nav {
   padding-inline: var(--pad);
 }
 .lang-toggle {
-  background: #1a2e2a;
+  background: var(--bg-panel);
   border-radius: 999px;
   display: flex;
   overflow: hidden;
