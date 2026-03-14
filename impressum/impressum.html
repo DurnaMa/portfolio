@@ -3,38 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/legal.css" />
     <title>Impressum</title>
+    <link rel="shortcut icon" href="../img/logo_fuer_dunklen_hintergrund.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/sections.css" />
+    <link rel="stylesheet" href="../css/legal.css" />
+    <script defer src="../translations.js"></script>
+    <script defer src="../portfolio.js"></script>
+    <script defer src="../carousel.js"></script>
+    <script defer src="../contact.js"></script>
+    <script defer src="../script.js"></script>
+    <script defer src="../render.js"></script>
   </head>
-
-  <body>
+  <body onload="init()">
     <div w3-include-html="../templates/header.html"></div>
-    <main class="impressum">
-      <h1>Impressum</h1>
-      <p class="subtitle">Pflichtangaben gemäß § 5 TMG</p>
+    <div class="content">
+      <main class="impressum">
+        <h1 data-i18n="imp.title">Impressum</h1>
+        <p class="subtitle" data-i18n="imp.sub">Pflichtangaben gemäß § 5 TMG</p>
 
-      <p>
-        Mahir Durna
-        <br />
-        Borkumstr. 3
-        <br />
-        49696 Molbergen
-      </p>
+        <p>
+          Mahir Durna
+          <br />
+          Borkumstr. 3
+          <br />
+          49696 Molbergen
+        </p>
 
-      <h2>Kontakt</h2>
-      <p>
-        Telefon:
-        <a href="tel:+491623301449">+49 162 3301449</a>
-        <br />
-        E-Mail:
-        <a href="mailto:contact@mahir-durna.de">contact@mahir-durna.de</a>
-      </p>
+        <h2 data-i18n="imp.contact">Kontakt</h2>
+        <p>
+          <span data-i18n="imp.phone">Telefon:</span>
+          <a href="tel:+491623301449">+49 162 3301449</a>
+          <br />
+          <span data-i18n="imp.email">E-Mail:</span>
+          <a href="mailto:contact@mahir-durna.de">contact@mahir-durna.de</a>
+        </p>
 
-      <p class="source-line">
-        Quelle:
-        <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">eRecht24</a>
-      </p>
-    </main>
+        <p class="source-line">
+          <span data-i18n="imp.source">Quelle:</span>
+          <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">eRecht24</a>
+        </p>
+      </main>
+    </div>
     <div w3-include-html="../templates/footer.html"></div>
   </body>
 </html>

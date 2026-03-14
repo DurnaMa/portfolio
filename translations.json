@@ -37,7 +37,38 @@
     "form.msg.label": "How can I help you?",
     "form.msg.ph": "Hello Mahir, I am interested in…",
     "form.privacy": "I've read the <a href='datenschutz/datenschutz.html'>privacy policy</a> and agree to the processing of my data as outlined.",
-    "form.submit": "Say Hello ;)"
+    "form.submit": "Say Hello ;)",
+
+    "form.error.name": "Please enter your name.",
+    "form.error.email.empty": "Please enter your email address.",
+    "form.error.email.invalid": "Please enter a valid email address.",
+    "form.error.msg": "Please enter a message.",
+    "form.error.privacy": "Please accept the privacy policy.",
+    "form.success": "Message sent! I'll get back to you soon.",
+    "form.error.server": "Something went wrong. Please try again or send an email directly.",
+    "form.sending": "Sending…",
+    "form.sent": "Sent ✓",
+    "form.btnReset": "Say Hello ;)",
+
+    "nav.about": "About me",
+    "nav.skills": "Skills",
+    "nav.projects": "Projects",
+    "nav.contact": "Contact",
+
+    "footer.legal": "Legal Notice",
+    "footer.privacy": "Privacy Policy",
+
+    "ref.1.text": "I was continuously impressed by Mahir's efficient way of working and his dedication to the project's success.",
+    "ref.1.author": "T.Schulz - Frontend Developer",
+    "ref.2.text": "Mahir has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
+    "ref.2.author": "H.Janisch - Team Partner",
+    "ref.3.text": "I had the good fortune of working with Mahir on a project at the Developer Akademie. He always stayed calm, cool, and collected to make sure our team was set up for success.",
+    "ref.3.author": "K.Meier - Developer",
+
+    "ticker.1": "Available for remote work",
+    "ticker.2": "Frontend Developer",
+    "ticker.3": "Molbergen",
+    "ticker.4": "Open to opportunities"
   },
   "DE": {
     "hero.subtitle": "Frontend-Entwickler",
@@ -77,6 +108,37 @@
     "form.msg.label": "Wie kann ich helfen?",
     "form.msg.ph": "Hallo Mahir, ich interessiere mich für…",
     "form.privacy": "Ich habe die <a href='datenschutz/datenschutz.html'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.",
-    "form.submit": "Hallo sagen ;)"
+    "form.submit": "Hallo sagen ;)",
+
+    "form.error.name": "Bitte gib deinen Namen an.",
+    "form.error.email.empty": "Bitte gib deine E-Mail-Adresse an.",
+    "form.error.email.invalid": "Bitte gib eine gültige E-Mail-Adresse an.",
+    "form.error.msg": "Bitte gib eine Nachricht ein.",
+    "form.error.privacy": "Bitte akzeptiere die Datenschutzerklärung.",
+    "form.success": "Nachricht gesendet! Ich melde mich in Kürze.",
+    "form.error.server": "Es ist ein Fehler aufgetreten. Bitte versuche es noch einmal oder sende eine E-Mail.",
+    "form.sending": "Wird gesendet…",
+    "form.sent": "Gesendet ✓",
+    "form.btnReset": "Hallo sagen ;)",
+
+    "nav.about": "Über mich",
+    "nav.skills": "Fähigkeiten",
+    "nav.projects": "Projekte",
+    "nav.contact": "Kontakt",
+
+    "footer.legal": "Impressum",
+    "footer.privacy": "Datenschutzerklärung",
+
+    "ref.1.text": "Ich war stets beeindruckt von Mahirs effizienter Arbeitsweise und seinem Einsatz für den Projekterfolg.",
+    "ref.1.author": "T.Schulz - Frontend Developer",
+    "ref.2.text": "Mahir hat sich als zuverlässiger Teampartner erwiesen. Seine technischen Fähigkeiten und seine proaktive Art waren entscheidend für den Erfolg unseres Projekts.",
+    "ref.2.author": "H.Janisch - Team Partner",
+    "ref.3.text": "Ich hatte das große Glück, mit Mahir an einem Projekt in der Developer Akademie zu arbeiten. Er blieb immer ruhig und konzentriert, um den Erfolg unseres Teams sicherzustellen.",
+    "ref.3.author": "K.Meier - Developer",
+
+    "ticker.1": "Verfügbar für Remote-Arbeit",
+    "ticker.2": "Frontend-Entwickler",
+    "ticker.3": "Molbergen",
+    "ticker.4": "Offen für neue Möglichkeiten"
   }
 }

@@ -140,7 +140,7 @@ nav {
 
 .nav-links a {
   font-family: 'Space Mono', monospace;
-  font-size: 0.875rem;
+  font-size: 1rem;
   transition: color 0.2s;
 }
 .nav-links a:hover {
@@ -163,7 +163,7 @@ nav {
 }
 .lang-toggle span {
   padding: 5px 12px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   font-family: 'Space Mono', monospace;
   cursor: pointer;
@@ -283,7 +283,7 @@ footer {
 }
 .footer-center {
   font-family: 'Space Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--teal);
   text-align: center;
 }
@@ -295,7 +295,7 @@ footer {
 }
 .footer-right a {
   font-family: 'Space Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 1rem;
   transition: color 0.2s;
   padding-block: 0.2rem;
 }
@@ -347,12 +347,19 @@ footer {
   .about-img-wrap img {
     height: clamp(200px, 40vw, 320px);
   }
-  .hero-right,
+  /* Hide only decorative line, keep social icons and email */
   .scroll-indicator,
   .scroll-line {
     display: none;
   }
   .carousel .ref-card.side {
+    display: none;
+  }
+  /* Hide portfolio preview block entirely on mobile */
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+  }
+  .project-preview {
     display: none;
   }
 }

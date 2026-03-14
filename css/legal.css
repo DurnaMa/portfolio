@@ -23,7 +23,7 @@ body {
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
-  padding: 7rem 1.5rem 5rem;
+  padding: 9rem 1.5rem 5rem;
 }
 
 /* ── Page title ────────────────────────────────────────────── */
@@ -191,14 +191,14 @@ body {
 
 /* ── Tablet ────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .dataprotection, .legal-notice, .impressum { padding: 2rem 1.25rem 4rem; }
+  .dataprotection, .legal-notice, .impressum { padding: 7rem 1.25rem 4rem; }
   .dataprotection h2, .legal-notice h2, .impressum h2 { font-size: 1.25rem; }
   .dataprotection ul li, .legal-notice ul li, .impressum ul li { font-size: 0.95rem; }
 }
 
 /* ── Mobile ────────────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .dataprotection, .legal-notice, .impressum { padding: 1.5rem 1rem 3rem; }
+  .dataprotection, .legal-notice, .impressum { padding: 6rem 1rem 3rem; }
   .dataprotection h1, .legal-notice h1, .impressum h1 { font-size: 1.75rem; }
   .dataprotection h2, .legal-notice h2, .impressum h2 { font-size: 1.05rem; padding-left: 0.65rem; }
   .dataprotection h3, .legal-notice h3, .impressum h3 { font-size: 0.78rem; }

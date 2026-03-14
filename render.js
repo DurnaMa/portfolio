@@ -2,10 +2,8 @@
 function buildOverlay() {
   if (document.getElementById('project-overlay')) return;
 
-  const overlay = document.createElement('div');
+  const overlay = document.createElement('dialog');
   overlay.id = 'project-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-label', 'Project details');
 
   overlay.innerHTML = `
