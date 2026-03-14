@@ -90,6 +90,13 @@ function initLangToggle() {
 
       localStorage.setItem('lang', lang);
       applyLang(lang);
+
+      // Close mobile menu if open
+      const burger = document.querySelector('.hamburger');
+      const navMobile = document.querySelector('.nav-mobile');
+      if (burger && navMobile && navMobile.classList.contains('open')) {
+        closeMenu(burger, navMobile);
+      }
     })
   );
 }

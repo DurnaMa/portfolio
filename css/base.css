@@ -150,13 +150,7 @@ section {
   padding: 0.625rem 1.25rem;
 }
 
-.hero-content {
-  transition: transform 0.3s ease;
-}
 
-body.menu-open .hero-content {
-  transform: translateY(220px);
-}
 /* === NAV === */
 nav {
   position: absolute;
@@ -448,11 +442,42 @@ footer {
 
 }
 @media (min-width: 1900px) {
+  html {
+    font-size: 112.5%; /* 18px base – scales all rem-based text */
+  }
   :root {
     --max-w: min(1400px, 80vw);
   }
   .tech-grid {
     gap: 2.5rem;
+  }
+
+  /* Override px-based font sizes */
+  .section-label {
+    font-size: 26px;
+  }
+  .lang-toggle span {
+    font-size: 18px;
+  }
+  .ticker-item {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 125%; /* 20px base – ultra-wide / 4K readability */
+  }
+
+  /* Override px-based font sizes */
+  .section-label {
+    font-size: 30px;
+  }
+  .lang-toggle span {
+    font-size: 20px;
+  }
+  .ticker-item {
+    font-size: 17px;
   }
 }
 

@@ -53,7 +53,6 @@ function openMenu(burger, navMobile) {
   burger.setAttribute('aria-expanded', 'true');
   navMobile.classList.add('open');
   document.body.style.overflow = 'hidden';
-  document.body.classList.add('menu-open');
 }
 
 /** @param {HTMLElement} burger @param {HTMLElement} navMobile */
@@ -61,7 +60,6 @@ function closeMenu(burger, navMobile) {
   burger.setAttribute('aria-expanded', 'false');
   navMobile.classList.remove('open');
   document.body.style.overflow = '';
-  document.body.classList.remove('menu-open');
 }
 
 /** Sets up hamburger toggle, nav-link clicks, outside-click and Escape to close. */

@@ -54,8 +54,10 @@ function updateCarousel(direction) {
   carouselTrack.classList.add(slideOut);
 
   setTimeout(() => {
-    centerText.textContent = testimonials[currentIndex].text;
-    centerAuthor.textContent = testimonials[currentIndex].author;
+    const current = testimonials[currentIndex];
+    if (!current) { isAnimating = false; return; }
+    centerText.textContent = current.text;
+    centerAuthor.textContent = current.author;
     updateSideCards();
     dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
 
