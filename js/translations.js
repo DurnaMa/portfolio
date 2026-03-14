@@ -103,8 +103,7 @@ function initLangToggle() {
 
 /** Restores language from localStorage on page load. */
 function restoreSavedLanguage() {
-  const saved = localStorage.getItem('lang');
-  if (!saved) return;
+  const saved = localStorage.getItem('lang') || 'EN';
   document.querySelectorAll('.lang-toggle span').forEach((b) => {
     b.classList.toggle('active', b.textContent.trim() === saved);
   });
