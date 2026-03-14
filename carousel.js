@@ -94,3 +94,18 @@ function initCarouselControls() {
 }
 
 initCarouselControls();
+
+/** Positions the quote-mark above the center card (outside the track, so it doesn't animate). */
+const quoteMark = document.querySelector('.quote-mark');
+const carouselContainer = document.querySelector('.carousel');
+
+function positionQuoteMark() {
+  if (!quoteMark || !centerCard || !carouselContainer) return;
+  const carouselRect = carouselContainer.getBoundingClientRect();
+  const cardRect = centerCard.getBoundingClientRect();
+  quoteMark.style.left = (cardRect.left - carouselRect.left - 10) + 'px';
+  quoteMark.style.top = (cardRect.top - carouselRect.top - 25) + 'px';
+}
+
+positionQuoteMark();
+window.addEventListener('resize', positionQuoteMark);

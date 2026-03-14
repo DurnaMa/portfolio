@@ -151,7 +151,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: var(--max-w);
+  max-width: calc(var(--max-w) + 6rem);
   margin-inline: auto;
   padding-inline: var(--pad);
 }
@@ -308,7 +308,7 @@ footer {
   grid-template-columns: auto 1fr auto;
   gap: 1rem;
   align-items: center;
-  max-width: var(--max-w);
+  max-width: calc(var(--max-w) + 6rem);
   margin-inline: auto;
   padding-inline: var(--pad);
 }
