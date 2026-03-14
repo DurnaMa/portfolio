@@ -355,6 +355,7 @@ footer {
   .carousel .ref-card.side {
     display: none;
   }
+
   /* Hide portfolio preview block entirely on mobile */
   .portfolio-layout {
     grid-template-columns: 1fr;
@@ -364,7 +365,8 @@ footer {
   }
 }
 @media (max-width: 768px) {
-  .nav-links, .nav-left {
+  .nav-links,
+  .nav-left {
     display: none;
   }
   .hamburger {
@@ -406,6 +408,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
 }
 @media (min-width: 1900px) {
   :root {
