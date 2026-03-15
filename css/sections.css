@@ -87,7 +87,7 @@
 .scroll-indicator {
   position: absolute;
   left: max(clamp(1rem, 4vw, 2.5rem), calc(50% - var(--max-w) / 2 - 3rem));
-  bottom: clamp(4rem, 9vw, 7rem);
+  bottom: clamp(270px, 8vw, 280px);
   border: 1.5px solid var(--teal);
   border-radius: 14px;
   width: 28px;
@@ -95,10 +95,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 .scroll-dot {
   width: 12px;
   height: 12px;
+  transform: rotate(180deg);
   animation: scrollBounce 1.6s infinite;
 }
 @keyframes scrollBounce {
@@ -117,13 +119,14 @@
   left: max(clamp(1.8rem, 4.8vw, 3.3rem), calc(50% - var(--max-w) / 2 - 2.2rem));
   bottom: 0;
   width: 1px;
-  height: clamp(50px, 8vw, 80px);
-  background: var(--teal);
+  height: clamp(250px, 8vw, 280px);
+  background: linear-gradient(to bottom, transparent, var(--teal) 40%);
+  z-index: 3;
 }
 .hero-right {
   position: absolute;
   right: max(clamp(1rem, 3vw, 2rem), calc(50% - var(--max-w) / 2 - 3rem));
-  top: 50%;
+  top: 69%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -133,7 +136,7 @@
 .email-vertical {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   color: var(--muted);
   letter-spacing: 0.08em;
   transition: color 0.2s;
@@ -145,8 +148,8 @@
 }
 .hero-right-line {
   width: 1px;
-  height: 60px;
-  background: var(--white-20);
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, var(--teal) 40%);
 }
 .icon-link {
   color: var(--muted);
@@ -172,6 +175,9 @@
   transform-origin: left center;
   display: flex;
   align-items: center;
+  z-index: 4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 .ticker-track {
   display: flex;
