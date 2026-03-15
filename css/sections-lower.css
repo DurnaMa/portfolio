@@ -141,10 +141,11 @@
 }
 .carousel-track {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   gap: 1.5rem;
   overflow: hidden;
+  height: clamp(280px, 35vw, 360px);
 }
 .ref-card {
   border-radius: var(--radius);
@@ -153,13 +154,16 @@
   width: 100%;
   background: var(--card);
   border: 1px solid var(--teal-15);
-}
-.ref-card.center {
-  position: relative;
-  min-height: clamp(220px, 30vw, 300px);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
+}
+.ref-card.center {
+  position: relative;
+  background: var(--bg-panel);
+  border-color: var(--teal-20);
 }
 .ref-card.side {
   opacity: 0.3;
