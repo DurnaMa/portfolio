@@ -136,9 +136,12 @@
   text-align: center;
   margin-bottom: clamp(2rem, 5vw, 3.5rem);
 }
+
 .carousel {
-  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
+
 .carousel-track {
   display: flex;
   align-items: center;
@@ -166,8 +169,8 @@
   border: 1px solid var(--teal);
 }
 .ref-card.side {
-  opacity: 0.3;
-  overflow: hidden;
+  opacity: 1;
+  /* overflow: hidden; */
 }
 .quote-mark {
   position: absolute;
