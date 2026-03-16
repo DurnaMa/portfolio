@@ -47,7 +47,21 @@
     <section id="about">
       <div class="about-grid">
         <div class="about-img-wrap">
-          <img src="./img/mahirDurna.jpg" alt="Mahir Durna" />
+          <img
+            src="./img/mahirDurna.jpg"
+            alt="Mahir Durna"
+            loading="lazy"
+            srcset="
+              ./profilbild/mahirDurna.jpg,
+              ./profilbild/mahirDurna-large.jpg,
+              ./profilbild/mahirDurna-medium.jpg,
+              ./profilbild/mahirDurna-small.jpg
+            "
+            sizes="(max-width: 480px) 400px,
+         (max-width: 900px) 800px,
+         (max-width: 1400px) 1200px,
+         2000px"
+          />
         </div>
         <div>
           <p class="section-label" data-i18n="about.label">Who I Am</p>
@@ -196,7 +210,6 @@
       <div class="carousel">
         <img class="quote-mark" src="svg/quotes.svg" alt="quotes" />
         <div class="carousel-track">
-
           <div class="ref-card side left-side">
             <p style="font-size: 16px">...ously from Mahir efficient way...</p>
             <div class="ref-divider"></div>
@@ -204,8 +217,8 @@
           </div>
           <div class="ref-card center">
             <p style="font-size: 16px">
-              Mahir has proven to be a reliable group partner. His technical skills and proactive approach were crucial to
-              the success of our project.
+              Mahir has proven to be a reliable group partner. His technical skills and proactive approach were crucial
+              to the success of our project.
             </p>
             <div class="ref-divider"></div>
             <span class="ref-author">H.Janisch - Team Partner</span>
