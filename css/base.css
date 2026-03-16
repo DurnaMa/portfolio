@@ -150,7 +150,6 @@ section {
   padding: 0.625rem 1.25rem;
 }
 
-
 /* === NAV === */
 nav {
   position: absolute;
@@ -439,7 +438,42 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+}
 
+@media (max-width: 730px) {
+  #references {
+    padding-inline: 1rem;
+  }
+
+  .ref-card,
+  .ref-card.center {
+    width: 90vw !important;
+  }
+  .carousel {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .carousel-track {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  #references {
+    padding-inline: 0.5rem;
+  }
+
+  .ref-card,
+  .ref-card.center {
+    width: 90vw !important;
+  }
+  .carousel {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .carousel-track {
+    width: 100%;
+  }
 }
 @media (min-width: 1900px) {
   html {

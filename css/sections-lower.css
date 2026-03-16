@@ -144,7 +144,7 @@
 
 .carousel-track {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 1.5rem;
   overflow: hidden;
@@ -156,7 +156,8 @@
   width: 632px;
   background: var(--card);
   border: 1px solid var(--teal-15);
-  height: 274px;
+  height: auto;
+  min-height: 274px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
