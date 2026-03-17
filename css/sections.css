@@ -311,8 +311,10 @@
 .growth-mindset-item {
   position: relative;
 }
-.growth-mindset-item p {
-  white-space: nowrap;
+@media (min-width: 460px) {
+  .growth-mindset-item p {
+    white-space: nowrap;
+  }
 }
 
 .hover-bubble {
