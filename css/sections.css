@@ -161,6 +161,9 @@
   align-items: center;
   justify-content: center;
 }
+.mobile-icon {
+  display: none;
+}
 .ticker-wrap {
   position: absolute;
   bottom: 0;
@@ -292,6 +295,7 @@
   transform: scale(1.5);
   transition: transform 0.2s ease-in-out;
 }
+
 .tech-icon {
   width: clamp(48px, 7vw, 64px);
   height: clamp(48px, 7vw, 64px);
@@ -315,7 +319,10 @@
   transform: translateX(-56px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    top 0.3s ease;
   pointer-events: none;
   z-index: 10;
   width: 196px;
