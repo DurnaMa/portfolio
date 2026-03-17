@@ -288,6 +288,10 @@
   align-items: center;
   gap: 0.625rem;
 }
+.tech-item-svg:hover {
+  transform: scale(1.5);
+  transition: transform 0.2s ease-in-out;
+}
 .tech-icon {
   width: clamp(48px, 7vw, 64px);
   height: clamp(48px, 7vw, 64px);
@@ -298,6 +302,30 @@
   border-radius: 12px;
   font-size: clamp(0.75rem, 1.5vw, 1rem);
   font-weight: 700;
+}
+
+.growth-mindset-item {
+  position: relative;
+}
+
+.hover-bubble {
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  transform: translateX(-56px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  width: 196px;
+  height: 135px;
+}
+
+.growth-mindset-item:hover .hover-bubble {
+  opacity: 1;
+  visibility: visible;
+  top: -140px;
 }
 .tech-svg {
   width: clamp(28px, 4.5vw, 40px);

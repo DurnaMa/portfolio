@@ -115,8 +115,8 @@ function positionQuoteMark() {
   const cardRect = centerCard.getBoundingClientRect();
 
   // Anführungszeichen links neben und leicht über der Karte – wie Bild 2
-  quoteMark.style.left = cardRect.left - wrapperRect.left - quoteMark.offsetWidth * 0.50 + 'px';
-  quoteMark.style.top  = cardRect.top  - wrapperRect.top  - quoteMark.offsetHeight * 0.2 + 'px';
+  quoteMark.style.left = cardRect.left - wrapperRect.left - quoteMark.offsetWidth * 0.5 + 'px';
+  quoteMark.style.top = cardRect.top - wrapperRect.top - quoteMark.offsetHeight * 0.2 + 'px';
 }
 
 window.addEventListener('load', positionQuoteMark);
