@@ -126,6 +126,7 @@
 
 /* === REFERENCES === */
 #references {
+  position: relative;
   background: var(--bg);
   overflow: hidden;
 }
@@ -138,6 +139,7 @@
 }
 
 .carousel {
+  position: relative;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
@@ -148,7 +150,7 @@
   justify-content: center;
   gap: 1.5rem;
   overflow: hidden;
-  height: 274px;
+  min-height: 274px;
 }
 .ref-card {
   border-radius: var(--radius);

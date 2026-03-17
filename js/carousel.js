@@ -24,15 +24,19 @@ const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
 /** Helper to get previous/next indices. */
-function getPrevIndex(i) { return (i - 1 + testimonials.length) % testimonials.length; }
-function getNextIndex(i) { return (i + 1) % testimonials.length; }
+function getPrevIndex(i) {
+  return (i - 1 + testimonials.length) % testimonials.length;
+}
+function getNextIndex(i) {
+  return (i + 1) % testimonials.length;
+}
 
 /** Updates side card content. */
 function updateSideCards() {
   if (testimonials.length === 0) return;
   const prev = testimonials[getPrevIndex(currentIndex)];
   const next = testimonials[getNextIndex(currentIndex)];
-  
+
   if (leftCard && prev) {
     leftCard.querySelector('p').textContent = prev.text;
     leftCard.querySelector('.ref-author').textContent = prev.author;
@@ -55,7 +59,10 @@ function updateCarousel(direction) {
 
   setTimeout(() => {
     const current = testimonials[currentIndex];
-    if (!current) { isAnimating = false; return; }
+    if (!current) {
+      isAnimating = false;
+      return;
+    }
     centerText.textContent = current.text;
     centerAuthor.textContent = current.author;
     updateSideCards();
@@ -102,12 +109,14 @@ const quoteMark = document.querySelector('.quote-mark');
 const carouselContainer = document.querySelector('.carousel');
 
 function positionQuoteMark() {
-  if (!quoteMark || !centerCard || !carouselContainer) return;
-  const carouselRect = carouselContainer.getBoundingClientRect();
+  const wrapper = document.querySelector('.carousel-wrapper');
+  if (!quoteMark || !centerCard || !carouselContainer || !wrapper) return;
+  const wrapperRect = wrapper.getBoundingClientRect();
   const cardRect = centerCard.getBoundingClientRect();
-  quoteMark.style.left = (cardRect.left - carouselRect.left - 10) + 'px';
-  quoteMark.style.top = (cardRect.top - carouselRect.top - 25) + 'px';
+  // Center the quote mark horizontally relative to the center card
+  quoteMark.style.left = cardRect.left - wrapperRect.left + cardRect.width / 500 - quoteMark.offsetWidth / 500 + 'px';
+  quoteMark.style.top = cardRect.top - wrapperRect.top - 25 + 'px';
 }
 
-positionQuoteMark();
+window.addEventListener('load', positionQuoteMark);
 window.addEventListener('resize', positionQuoteMark);
