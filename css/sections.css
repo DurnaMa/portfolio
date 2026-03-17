@@ -311,6 +311,9 @@
 .growth-mindset-item {
   position: relative;
 }
+.growth-mindset-item p {
+  white-space: nowrap;
+}
 
 .hover-bubble {
   position: absolute;
@@ -333,6 +336,10 @@
   opacity: 1;
   visibility: visible;
   top: -140px;
+}
+.growth-mindset-item:hover p {
+  color: var(--teal);
+  transition: color 0.2s ease;
 }
 .tech-svg {
   width: clamp(28px, 4.5vw, 40px);
