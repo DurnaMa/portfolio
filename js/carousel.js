@@ -113,9 +113,10 @@ function positionQuoteMark() {
   if (!quoteMark || !centerCard || !carouselContainer || !wrapper) return;
   const wrapperRect = wrapper.getBoundingClientRect();
   const cardRect = centerCard.getBoundingClientRect();
-  // Center the quote mark horizontally relative to the center card
-  quoteMark.style.left = cardRect.left - wrapperRect.left + cardRect.width / 500 - quoteMark.offsetWidth / 500 + 'px';
-  quoteMark.style.top = cardRect.top - wrapperRect.top - 25 + 'px';
+
+  // Anführungszeichen links neben und leicht über der Karte – wie Bild 2
+  quoteMark.style.left = cardRect.left - wrapperRect.left - quoteMark.offsetWidth * 0.50 + 'px';
+  quoteMark.style.top  = cardRect.top  - wrapperRect.top  - quoteMark.offsetHeight * 0.2 + 'px';
 }
 
 window.addEventListener('load', positionQuoteMark);

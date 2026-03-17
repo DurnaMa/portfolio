@@ -184,6 +184,7 @@
   transition:
     left 0.15s ease,
     top 0.15s ease;
+  filter: brightness(0) invert(1);
 }
 .ref-card p {
   font-size: 1rem;
