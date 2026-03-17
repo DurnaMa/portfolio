@@ -140,6 +140,7 @@
 
 .carousel {
   position: relative;
+  overflow: visible;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
@@ -149,7 +150,7 @@
   align-items: stretch;
   justify-content: center;
   gap: 1.5rem;
-  overflow: hidden;
+  overflow: visible;
   min-height: 274px;
 }
 .ref-card {
@@ -168,6 +169,7 @@
 }
 .ref-card.center {
   position: relative;
+  overflow: visible;
   background: var(--hero-grad-end);
   border: 1px solid var(--teal);
 }
@@ -177,13 +179,12 @@
 }
 .quote-mark {
   position: absolute;
-  width: clamp(40px, 10vw, 70px);
+  top: -6%;
+  left: 7%;
+  width: clamp(80px, 15vw, 140px);
   height: auto;
   z-index: 2;
   pointer-events: none;
-  transition:
-    left 0.15s ease,
-    top 0.15s ease;
   filter: brightness(0) invert(1);
 }
 .ref-card p {
@@ -250,58 +251,58 @@
 .carousel-track {
   transition: none;
 }
-.slide-out-left {
-  animation: slideOutLeft 0.3s ease forwards;
-}
-.slide-out-right {
-  animation: slideOutRight 0.3s ease forwards;
-}
-.slide-in-right {
-  animation: slideInRight 0.35s ease forwards;
-}
-.slide-in-left {
-  animation: slideInLeft 0.35s ease forwards;
-}
-@keyframes slideOutLeft {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-}
-@keyframes slideOutRight {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-}
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+/*.slide-out-left {*/
+/*  animation: slideOutLeft 0.3s ease forwards;*/
+/*}*/
+/*.slide-out-right {*/
+/*  animation: slideOutRight 0.3s ease forwards;*/
+/*}*/
+/*.slide-in-right {*/
+/*  animation: slideInRight 0.35s ease forwards;*/
+/*}*/
+/*.slide-in-left {*/
+/*  animation: slideInLeft 0.35s ease forwards;*/
+/*}*/
+/*@keyframes slideOutLeft {*/
+/*  from {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0);*/
+/*  }*/
+/*  to {*/
+/*    opacity: 0;*/
+/*    transform: translateX(-60px);*/
+/*  }*/
+/*}*/
+/*@keyframes slideOutRight {*/
+/*  from {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0);*/
+/*  }*/
+/*  to {*/
+/*    opacity: 0;*/
+/*    transform: translateX(60px);*/
+/*  }*/
+/*}*/
+/*@keyframes slideInRight {*/
+/*  from {*/
+/*    opacity: 0;*/
+/*    transform: translateX(60px);*/
+/*  }*/
+/*  to {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0);*/
+/*  }*/
+/*}*/
+/*@keyframes slideInLeft {*/
+/*  from {*/
+/*    opacity: 0;*/
+/*    transform: translateX(-60px);*/
+/*  }*/
+/*  to {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0);*/
+/*  }*/
+/*}*/
 
 /* === CONTACT === */
 #contact {
