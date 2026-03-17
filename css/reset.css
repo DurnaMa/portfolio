@@ -1,0 +1,76 @@
+/* === RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 2.6;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--teal);
+  color: #000;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* === WCAG === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 20s !important;
+    transition-duration: 2s !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+@media (forced-colors: active) {
+  .btn-outline,
+  .btn-submit,
+  .carousel-btn {
+    border: 2px solid ButtonText;
+  }
+  .form-group input,
+  .form-group textarea {
+    border-bottom: 2px solid ButtonText;
+  }
+}
