@@ -132,6 +132,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  z-index: 10;
 }
 .email-vertical {
   writing-mode: vertical-rl;
@@ -181,6 +182,9 @@
   z-index: 4;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
 }
 .ticker-track {
   display: flex;
@@ -291,6 +295,9 @@
   align-items: center;
   gap: 0.625rem;
 }
+.tech-item p {
+  white-space: nowrap;
+}
 .tech-item-svg:hover {
   transform: scale(1.5);
   transition: transform 0.2s ease-in-out;
@@ -310,11 +317,6 @@
 
 .growth-mindset-item {
   position: relative;
-}
-@media (min-width: 460px) {
-  .growth-mindset-item p {
-    white-space: nowrap;
-  }
 }
 
 .hover-bubble {

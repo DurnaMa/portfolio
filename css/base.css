@@ -94,6 +94,7 @@ section {
     transform: none;
     gap: 16px;
     flex-direction: column;
+    z-index: 20;
   }
   .desktop-icon {
     display: none !important;
@@ -112,14 +113,13 @@ section {
     min-width: 44px;
     min-height: 44px;
     pointer-events: auto;
-    z-index: 10;
   }
   .hero-right-line {
     height: 120px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
