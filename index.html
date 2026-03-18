@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/base.css" />
   </head>
-  <body onload="init()">
+  <body>
     <!-- ══════════ HERO ══════════ -->
     <section id="hero">
-      <div w3-include-html="./templates/header.html"></div>
+      <div data-include-html="./templates/header.html"></div>
       <div class="hero-content">
         <p class="hero-subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
         <h1 class="hero-title">Mahir Durna</h1>
@@ -254,6 +254,7 @@
           <img src="svg/Arrow-Right.svg" alt="arrow_right" />
         </button>
       </div>
+      </div>
     </section>
     <!-- ══════════ CONTACT ══════════ -->
     <section id="contact">
@@ -273,7 +274,7 @@
           <p class="contact-desc" style="margin-top: 12px">
             Need a Frontend developer?
             <a
-              href="/cdn-cgi/l/email-protection#a2ced7c9cfd7cecee2c7cfc3cbce8cc1cdcf"
+              href="mailto:contact@mahir-durna.de"
               class="contact-link"
               data-i18n="contact.cta"
             >
@@ -306,13 +307,16 @@
         </form>
       </div>
     </section>
-    <!-- ══════════ FOOTER ══════� -->
-    <div w3-include-html="./templates/footer.html"></div>
+    <!-- ══════════ FOOTER ══════════ -->
+    <div data-include-html="./templates/footer.html"></div>
     <script src="./js/translations.js"></script>
     <script src="./js/portfolio.js"></script>
     <script src="./js/carousel.js"></script>
     <script src="./js/contact.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/render.js"></script>
+    <script>
+      window.addEventListener('load', init);
+    </script>
   </body>
 </html>

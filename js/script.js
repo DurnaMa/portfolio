@@ -32,12 +32,13 @@ function fixSubpageNavLinks() {
   }
 }
 
-/** Fetches and injects HTML partials via [w3-include-html] attributes. */
+/** Fetches and injects HTML partials via [w3-include-html] or [data-include-html] attributes. */
 async function includeHTML() {
-  const elements = document.querySelectorAll('[w3-include-html]');
+  const elements = document.querySelectorAll('[w3-include-html], [data-include-html]');
   for (let i = 0; i < elements.length; i++) {
     const el = elements[i];
-    const resp = await fetch(el.getAttribute('w3-include-html'));
+    const attr = el.hasAttribute('w3-include-html') ? 'w3-include-html' : 'data-include-html';
+    const resp = await fetch(el.getAttribute(attr));
     el.innerHTML = resp.ok ? await resp.text() : 'Page not found';
   }
 }
