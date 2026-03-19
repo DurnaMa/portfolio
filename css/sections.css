@@ -72,6 +72,7 @@
   margin-bottom: 0.75rem;
 }
 .hero-title {
+  font-family: var(--font-main), sans-serif;
   font-size: clamp(2.75rem, 9vw, 6.5rem);
   font-weight: 700;
   line-height: 1;

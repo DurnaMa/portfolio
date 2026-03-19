@@ -1,5 +1,12 @@
+@import "@fontsource/karla/index.css";
+@import "@fontsource/fira-code/index.css";
+
 /* === TOKENS === */
 :root {
+  /* Fonts */
+  --font-main: 'Karla', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
   --teal: #2dd4bf;
   --bg: #0a0a0a;
   --bg2: #0f1a18;
