@@ -128,7 +128,6 @@
 #references {
   position: relative;
   background: var(--bg);
-  overflow: hidden;
 }
 #references h2 {
   font-family: 'Space Mono', monospace;

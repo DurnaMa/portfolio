@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mahir Durna – Frontend Developer</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/overlay.css" />
-    <link rel="stylesheet" href="css/sections.css" />
-    <link rel="stylesheet" href="css/sections-lower.css" />
-    <link rel="stylesheet" href="css/base.css" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/overlay.css" />
+    <link rel="stylesheet" href="/css/sections.css" />
+    <link rel="stylesheet" href="/css/sections-lower.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/base.css" />
   </head>
-  <body onload="init()">
+  <body>
     <!-- ══════════ HERO ══════════ -->
     <section id="hero">
-      <div w3-include-html="./templates/header.html"></div>
+      <div data-include-html="/templates/header.html"></div>
       <div class="hero-content">
         <p class="hero-subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
         <h1 class="hero-title">Mahir Durna</h1>
@@ -24,18 +27,19 @@
         </div>
       </div>
       <div class="scroll-indicator">
-        <img class="scroll-dot" src="svg/arrow-don.svg" alt="arrow-don" />
+        <img class="scroll-dot" src="/svg/arrow-don.svg" alt="arrow-don" />
       </div>
       <div class="scroll-line"></div>
       <div class="hero-right">
-        <a href="mailto:contact@mahir-durna.de" class="email-vertical">
-          <span class="__cf_email__" data-cfemail="5f132a34322a33331f3a323e3633713c3032">contact@mahir-durna.de</span>
+        <a href="mailto:contact@mahir-durna.de" target="_blank" class="email-vertical">
+          <span class="desktop-icon">contact@mahir-durna.de</span>
+          <img src="/svg/mail.svg" alt="Email" class="mobile-icon" />
         </a>
         <a href="https://github.com/DurnaMa" target="_blank" class="icon-link" aria-label="GitHub">
-          <img src="svg/gitHub.svg" alt="GitHub" />
+          <img src="/svg/Github.svg" alt="GitHub" />
         </a>
         <a href="https://linkedin.com/in/mahir-durna" target="_blank" class="icon-link" aria-label="LinkedIn">
-          <img src="svg/linkedInComponent.svg" alt="LinkedIn" />
+          <img src="/svg/Linkedin.svg" alt="LinkedIn" />
         </a>
         <div class="hero-right-line"></div>
       </div>
@@ -48,14 +52,14 @@
       <div class="about-grid">
         <div class="about-img-wrap">
           <img
-            src="./img/mahirDurna.jpg"
+            src="/img/mahirDurna.jpg"
             alt="Mahir Durna"
             loading="lazy"
             srcset="
-              ./profilbild/mahirDurna.jpg,
-              ./profilbild/mahirDurna-large.jpg,
-              ./profilbild/mahirDurna-medium.jpg,
-              ./profilbild/mahirDurna-small.jpg
+              /profilbild/mahirDurna.jpg,
+              /profilbild/mahirDurna-large.jpg,
+              /profilbild/mahirDurna-medium.jpg,
+              /profilbild/mahirDurna-small.jpg
             "
             sizes="(max-width: 480px) 400px,
          (max-width: 900px) 800px,
@@ -120,47 +124,50 @@
         </div>
         <div class="tech-grid">
           <div class="tech-item">
-            <img src="./svg/HTML.svg" alt="HTML" />
+            <img class="tech-item-svg" src="/svg/HTML.svg" alt="HTML" />
             <p>HTML</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/CSS.svg" alt="CSS" />
+            <img class="tech-item-svg" src="/svg/CSS.svg" alt="CSS" />
             <p>CSS</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/javaScript.svg" alt="JavaScript" />
+            <img class="tech-item-svg" src="/svg/javaScript.svg" alt="JavaScript" />
             <p>JavaScript</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/materialDesign.svg" alt="Material Design" />
+            <img class="tech-item-svg" src="/svg/materialDesign.svg" alt="Material Design" />
             <p>Material Design</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/typeScript.svg" alt="TypeScript" />
+            <img class="tech-item-svg" src="/svg/typeScript.svg" alt="TypeScript" />
             <p>TypeScript</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/Angular.svg" alt="Angular" />
+            <img class="tech-item-svg" src="/svg/Angular.svg" alt="Angular" />
             <p>Angular</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/Firebase.svg" alt="Firebase" />
+            <img class="tech-item-svg" src="/svg/Firebase.svg" alt="Firebase" />
             <p>Firebase</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/GIT.svg" alt="GIT" />
+            <img class="tech-item-svg" src="/svg/GIT.svg" alt="GIT" />
             <p>GIT</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/Rest-Api.svg" alt="REST API" />
+            <img class="tech-item-svg" src="/svg/Rest-Api.svg" alt="REST API" />
             <p>REST API</p>
           </div>
           <div class="tech-item">
-            <img src="./svg/Scrum.svg" alt="Scrum" />
+            <img class="tech-item-svg" src="/svg/Scrum.svg" alt="Scrum" />
             <p>Scrum</p>
           </div>
-          <div class="tech-item">
-            <img src="./svg/growthMindsetInteraction.svg" alt="Growth Mindset" />
+          <div class="tech-item growth-mindset-item">
+            <img class="tech-item-svg" src="/svg/growthMindsetInteraction.svg" alt="Growth Mindset" />
+            <div class="hover-bubble">
+              <img src="/svg/Rectangle2.svg" alt="Growth Mindset Technologies" />
+            </div>
             <p>Growth Mindset</p>
           </div>
         </div>
@@ -180,7 +187,7 @@
           <div class="project-item" data-id="join">
             <div class="project">
               <span class="project-name">Join</span>
-              <img class="project-arrow" src="svg/arrow_outward.svg" alt="arrow_outward" />
+              <img class="project-arrow" src="/svg/arrow_outward.svg" alt="arrow_outward" />
             </div>
             <span class="project-tags">Angular | TypeScript | HTML | CSS | Firebase</span>
           </div>
@@ -188,14 +195,14 @@
           <div class="project-item" data-id="fantasyPlatform">
             <div class="project">
               <span class="project-name mono">Fantasy Platform</span>
-              <img class="project-arrow" src="svg/arrow_outward.svg" alt="arrow_outward" />
+              <img class="project-arrow" src="/svg/arrow_outward.svg" alt="arrow_outward" />
             </div>
             <span class="project-tags">HTML | CSS | JavaScript</span>
           </div>
         </div>
         <div class="project-preview">
           <div class="preview-frame">
-            <img src="img/logo_basic.png" alt="" class="preview-img" />
+            <img src="/img/logo_basic.png" alt="" class="preview-img" />
             <div class="preview-placeholder">
               <span>Screenshot</span>
               <span>coming soon</span>
@@ -207,7 +214,7 @@
     <section id="references">
       <h2 data-i18n="refs.heading">What my colleagues say about me</h2>
       <div class="carousel-wrapper" style="position: relative;">
-<!--        <img class="quote-mark" src="svg/quotes.svg" alt="quotes" />-->
+        <img class="quote-mark" src="/svg/quotes.svg" alt="quotes" />
         <div class="carousel">
         <div class="carousel-track">
           <div class="ref-card side left-side">
@@ -236,7 +243,7 @@
       </div>
       <div class="carousel-controls">
         <button class="carousel-btn prev">
-          <img src="svg/Arrow-Left.svg" alt="arrow_right" />
+          <img src="/svg/Arrow-Left.svg" alt="arrow_right" />
         </button>
         <div class="carousel-dots">
           <div class="carousel-dot active"></div>
@@ -244,8 +251,9 @@
           <div class="carousel-dot"></div>
         </div>
         <button class="carousel-btn next">
-          <img src="svg/Arrow-Right.svg" alt="arrow_right" />
+          <img src="/svg/Arrow-Right.svg" alt="arrow_right" />
         </button>
+      </div>
       </div>
     </section>
     <!-- ══════════ CONTACT ══════════ -->
@@ -266,7 +274,7 @@
           <p class="contact-desc" style="margin-top: 12px">
             Need a Frontend developer?
             <a
-              href="/cdn-cgi/l/email-protection#a2ced7c9cfd7cecee2c7cfc3cbce8cc1cdcf"
+              href="mailto:contact@mahir-durna.de"
               class="contact-link"
               data-i18n="contact.cta"
             >
@@ -291,7 +299,7 @@
             <input type="checkbox" id="privacy" />
             <label for="privacy" data-i18n="form.privacy">
               I've read the
-              <a href="datenschutz/datenschutz.html">privacy policy</a>
+              <a href="/datenschutz/datenschutz.html">privacy policy</a>
               and agree to the processing of my data as outlined.
             </label>
           </div>
@@ -299,13 +307,16 @@
         </form>
       </div>
     </section>
-    <!-- ══════════ FOOTER ══════� -->
-    <div w3-include-html="./templates/footer.html"></div>
-    <script src="./js/translations.js"></script>
-    <script src="./js/portfolio.js"></script>
-    <script src="./js/carousel.js"></script>
-    <script src="./js/contact.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/render.js"></script>
+    <!-- ══════════ FOOTER ══════════ -->
+    <div data-include-html="/templates/footer.html"></div>
+    <script src="/js/translations.js"></script>
+    <script src="/js/portfolio.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/contact.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/render.js"></script>
+    <script>
+      window.addEventListener('load', init);
+    </script>
   </body>
 </html>
