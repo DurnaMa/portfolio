@@ -61,7 +61,7 @@ function applyLang(lang) {
   });
 
   // Dynamically update JS-rendered text content if functions exist:
-  if (typeof updateTestimonialsData === 'function') updateTestimonialsData();
+  if (typeof updateReferencesData === 'function') updateReferencesData();
   if (typeof updateSideCards === 'function') updateSideCards();
   if (typeof initTicker === 'function') initTicker();
   

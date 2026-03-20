@@ -1,9 +1,9 @@
-// ── TESTIMONIALS CAROUSEL ──
+// ── referencesData CAROUSEL ──
 
-let testimonials = [];
+let referencesData = [];
 
-function updateTestimonialsData() {
-  testimonials = [
+function updateReferencesData() {
+  referencesData = [
     { text: t('ref.1.text'), author: t('ref.1.author') },
     { text: t('ref.2.text'), author: t('ref.2.author') },
     { text: t('ref.3.text'), author: t('ref.3.author') },
@@ -23,78 +23,85 @@ const dots = document.querySelectorAll('.carousel-dot');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
-/** Helper to get previous/next indices. */
 function getPrevIndex(i) {
-  return (i - 1 + testimonials.length) % testimonials.length;
+  return (i - 1 + referencesData.length) % referencesData.length;
 }
 function getNextIndex(i) {
-  return (i + 1) % testimonials.length;
+  return (i + 1) % referencesData.length;
 }
 
-/** Updates side card content. */
+function updateDots() {
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+}
+
+function updateAllCards() {
+  const current = referencesData[currentIndex];
+  const prev = referencesData[getPrevIndex(currentIndex)];
+  const next = referencesData[getNextIndex(currentIndex)];
+
+  if (centerText) centerText.textContent = current?.text ?? '';
+  if (centerAuthor) centerAuthor.textContent = current?.author ?? '';
+
+  if (leftCard) {
+    leftCard.querySelector('p').textContent = prev?.text ?? '';
+    leftCard.querySelector('.ref-author').textContent = prev?.author ?? '';
+  }
+  if (rightCard) {
+    rightCard.querySelector('p').textContent = next?.text ?? '';
+    rightCard.querySelector('.ref-author').textContent = next?.author ?? '';
+  }
+
+  updateDots();
+}
+
+// Alias für translations.js Aufruf
 function updateSideCards() {
-  if (testimonials.length === 0) return;
-  const prev = testimonials[getPrevIndex(currentIndex)];
-  const next = testimonials[getNextIndex(currentIndex)];
-
-  if (leftCard && prev) {
-    leftCard.querySelector('p').textContent = prev.text;
-    leftCard.querySelector('.ref-author').textContent = prev.author;
-  }
-  if (rightCard && next) {
-    rightCard.querySelector('p').textContent = next.text;
-    rightCard.querySelector('.ref-author').textContent = next.author;
-  }
+  updateAllCards();
 }
 
-/** Renders the current testimonial with a slide animation. */
 function updateCarousel(direction) {
-  if (isAnimating || !carouselTrack) return;
+  if (isAnimating || !carouselTrack || !centerCard) return;
   isAnimating = true;
 
-  const slideOut = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
-  const slideIn = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+  // Karten-Breite + Gap berechnen
+  const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 24;
+  const cardWidth = centerCard.offsetWidth + gap;
+  const moveX = direction === 'next' ? -cardWidth : cardWidth;
 
-  carouselTrack.classList.add(slideOut);
+  // 1. Track sanft verschieben
+  carouselTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+  carouselTrack.style.transform = `translateX(${moveX}px)`;
 
   setTimeout(() => {
-    const current = testimonials[currentIndex];
-    if (!current) {
-      isAnimating = false;
-      return;
-    }
-    centerText.textContent = current.text;
-    centerAuthor.textContent = current.author;
-    updateSideCards();
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    // 2. Transition deaktivieren → sofort zurücksetzen (kein Blitzen)
+    carouselTrack.style.transition = 'none';
+    carouselTrack.style.transform = 'translateX(0)';
 
-    carouselTrack.classList.remove(slideOut);
-    carouselTrack.classList.add(slideIn);
+    // 3. Inhalte aller Karten aktualisieren
+    updateAllCards();
 
-    setTimeout(() => {
-      carouselTrack.classList.remove(slideIn);
+    // 4. Transition wieder freigeben
+    requestAnimationFrame(() => {
+      carouselTrack.style.transition = '';
       isAnimating = false;
-    }, 350);
-  }, 300);
+    });
+  }, 500);
 }
 
-/** Binds click events to carousel prev/next buttons and dot navigation. */
 function initCarouselControls() {
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      currentIndex = getNextIndex(currentIndex);
-      updateCarousel('next');
-    });
-  }
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      currentIndex = getPrevIndex(currentIndex);
-      updateCarousel('prev');
-    });
-  }
+  nextBtn?.addEventListener('click', () => {
+    currentIndex = getNextIndex(currentIndex);
+    updateCarousel('next');
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    currentIndex = getPrevIndex(currentIndex);
+    updateCarousel('prev');
+  });
+
   dots.forEach((dot, i) =>
     dot.addEventListener('click', () => {
-      if (i === currentIndex) return;
+      if (i === currentIndex || isAnimating) return;
       const direction = i > currentIndex ? 'next' : 'prev';
       currentIndex = i;
       updateCarousel(direction);
@@ -104,20 +111,18 @@ function initCarouselControls() {
 
 initCarouselControls();
 
-/** Positions the quote-mark above the center card (outside the track, so it doesn't animate). */
-const quoteMark = document.querySelector('.quote-mark');
-const carouselContainer = document.querySelector('.carousel');
-
-function positionQuoteMark() {
-  const wrapper = document.querySelector('.carousel-wrapper');
-  if (!quoteMark || !centerCard || !carouselContainer || !wrapper) return;
-  const wrapperRect = wrapper.getBoundingClientRect();
-  const cardRect = centerCard.getBoundingClientRect();
-
-  // Anführungszeichen links neben und leicht über der Karte – wie Bild 2
-  quoteMark.style.left = cardRect.left - wrapperRect.left - quoteMark.offsetWidth * 0.5 + 'px';
-  quoteMark.style.top = cardRect.top - wrapperRect.top - quoteMark.offsetHeight * 0.2 + 'px';
-}
-
-window.addEventListener('load', positionQuoteMark);
-window.addEventListener('resize', positionQuoteMark);
+// // ── QUOTE MARK POSITION ──
+// const quoteMark = document.querySelector('.quote-mark');
+// const carouselContainer = document.querySelector('.carousel');
+//
+// function positionQuoteMark() {
+//   const wrapper = document.querySelector('.carousel-wrapper');
+//   if (!quoteMark || !centerCard || !wrapper) return;
+//   const wrapperRect = wrapper.getBoundingClientRect();
+//   const cardRect = centerCard.getBoundingClientRect();
+//   quoteMark.style.left = cardRect.left - wrapperRect.left - quoteMark.offsetWidth * 0.35 + 'px';
+//   quoteMark.style.top = cardRect.top - wrapperRect.top - quoteMark.offsetHeight * 0.2 + 'px';
+// }
+//
+// window.addEventListener('load', positionQuoteMark);
+// window.addEventListener('resize', positionQuoteMark);

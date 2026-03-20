@@ -163,9 +163,6 @@
   align-items: center;
   justify-content: center;
 }
-.mobile-icon {
-  display: none;
-}
 .ticker-wrap {
   position: absolute;
   bottom: 0;
