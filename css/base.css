@@ -422,7 +422,7 @@ footer {
     transform: none;
     gap: 16px;
     flex-direction: column;
-    z-index: 20;
+    z-index: 3;
   }
   .desktop-icon {
     display: none !important;
