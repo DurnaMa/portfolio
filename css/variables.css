@@ -1,5 +1,8 @@
-@import "@fontsource/karla/index.css";
-@import "@fontsource/fira-code/index.css";
+@import "@fontsource/karla/300.css";
+@import "@fontsource/karla/400.css";
+@import "@fontsource/karla/700.css";
+@import "@fontsource/fira-code/400.css";
+@import "@fontsource/fira-code/700.css";
 
 /* === TOKENS === */
 :root {
