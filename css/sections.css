@@ -72,7 +72,7 @@
   margin-bottom: 0.75rem;
 }
 .hero-title {
-  font-family: var(--font-main),sans-serif;
+  font-family: var(--font-main), sans-serif;
   font-size: clamp(2.75rem, 9vw, 6.5rem);
   /*font-weight: 700;*/
   line-height: 1;
@@ -143,6 +143,9 @@
   letter-spacing: 0.08em;
   transition: color 0.2s;
   white-space: nowrap;
+}
+.mobile-icon {
+  display: none;
 }
 .email-vertical:hover,
 .icon-link:hover {
