@@ -45,7 +45,8 @@
 .form-group label,
 .carousel-btn,
 .form-feedback {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-firaCode),sans-serif;
+  font-weight: 700;
 }
 
 /* === HERO === */
@@ -72,9 +73,9 @@
   margin-bottom: 0.75rem;
 }
 .hero-title {
-  font-family: var(--font-main), sans-serif;
+  font-family: var(--font-karla), sans-serif;
   font-size: clamp(2.75rem, 9vw, 6.5rem);
-  /*font-weight: 700;*/
+  font-weight: 700;
   line-height: 1;
   margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }

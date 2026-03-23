@@ -7,8 +7,8 @@
 /* === TOKENS === */
 :root {
   /* Fonts */
-  --font-main: 'Karla', sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-karla: 'Karla', sans-serif;
+  --font-firaCode: 'Fira Code', monospace;
 
   --teal: #2dd4bf;
   --bg: #0a0a0a;
