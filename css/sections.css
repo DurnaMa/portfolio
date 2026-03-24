@@ -154,7 +154,7 @@
 }
 .hero-right-line {
   width: 1px;
-  height: 200px;
+  height: 150px;
   background: linear-gradient(to bottom, transparent, var(--teal) 40%);
 }
 .icon-link {
@@ -195,7 +195,7 @@
   will-change: transform;
 }
 .ticker-item {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--teal);
   display: inline-flex;
   align-items: center;
@@ -277,7 +277,7 @@
   margin-bottom: 1rem;
 }
 .need-skill {
-  font-size: 0.9375rem !important;
+  font-size: 1rem !important;
   font-weight: 600;
   color: var(--text) !important;
 }
@@ -312,7 +312,7 @@
   justify-content: center;
   background: var(--bg-panel);
   border-radius: 12px;
-  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.5vw, 1rem);
   font-weight: 700;
 }
 
@@ -351,7 +351,7 @@
   height: clamp(28px, 4.5vw, 40px);
 }
 .tech-label {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--text);
   text-align: center;
 }
@@ -386,7 +386,7 @@
   background: var(--bg-panel);
   border: 1px solid var(--teal);
   color: var(--teal);
-  font-size: 0.65rem;
+  font-size: 1rem;
 }
 .tech-icon.scrum {
   background: var(--bg-panel);

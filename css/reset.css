@@ -10,12 +10,15 @@
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Karla', sans-serif;
   line-height: 2.6;
+  max-width: 100%;
   overflow-x: hidden;
 }
 a {

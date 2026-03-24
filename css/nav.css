@@ -66,7 +66,7 @@ nav {
 }
 .logo-text-nav {
   font-weight: 700;
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.5vw, 1rem);
   line-height: 1.15;
 }
 .hamburger {
