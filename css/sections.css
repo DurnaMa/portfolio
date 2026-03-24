@@ -12,11 +12,12 @@
   background: var(--card);
   border: 1px solid var(--teal-20);
   border-radius: var(--radius);
-  padding: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1rem, 3vw, 4rem);
 }
 .about-card h2,
 .skills-card h2 {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-firaCode), sans-serif;
+  font-weight: 700;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--teal);
   margin-bottom: 1rem;
@@ -45,7 +46,7 @@
 .form-group label,
 .carousel-btn,
 .form-feedback {
-  font-family: var(--font-firaCode),sans-serif;
+  font-family: var(--font-karla), sans-serif;
   font-weight: 400;
 }
 
@@ -155,7 +156,7 @@
 }
 .hero-right-line {
   width: 1px;
-  height: clamp(5.5rem, 9vw, 8rem);
+  height: clamp(5.5rem, 9vw, 8.5rem);
   background: linear-gradient(to bottom, transparent, var(--teal) 40%);
 }
 .icon-link {
@@ -178,7 +179,7 @@
   background: var(--white-06);
   border-top: 1px solid var(--border);
   padding: 12px 32px;
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
   transform-origin: left center;
   display: flex;
   align-items: center;
@@ -230,6 +231,14 @@
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
+@media (min-width: 1025px) {
+  .about-grid > div:nth-child(1) {
+    transform: translateY(-120px);
+  }
+  .about-grid > div:nth-child(2) {
+    transform: translateY(60px);
+  }
+}
 .about-img-wrap {
   border-radius: var(--radius);
   overflow: hidden;
@@ -241,6 +250,8 @@
   filter: grayscale(100%);
 }
 .about-card > p {
+  font-family: var(--font-karla), sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.25rem;

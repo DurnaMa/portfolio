@@ -110,9 +110,10 @@ section {
   padding-inline: var(--pad);
 }
 .section-label {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-karla), sans-serif;
+  font-weight: 500;
   color: var(--teal);
-  font-size: 22px;
+  font-size: clamp(1rem, 1vw, 1.5rem);
   display: block;
 }
 .btn-outline,
