@@ -46,7 +46,7 @@
 .carousel-btn,
 .form-feedback {
   font-family: var(--font-firaCode),sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* === HERO === */
@@ -67,17 +67,18 @@
   padding-bottom: clamp(4rem, 10vw, 7rem);
 }
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: clamp(1rem, 2vw, 2.5rem);
   color: var(--muted);
   letter-spacing: 0.15em;
   margin-bottom: 0.75rem;
 }
 .hero-title {
   font-family: var(--font-karla), sans-serif;
-  font-size: clamp(2.75rem, 9vw, 6.5rem);
+  font-size: clamp(3.2rem, 5vw + 2rem, 8rem);
   font-weight: 700;
   line-height: 1;
   margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  white-space: nowrap;
 }
 .hero-btns {
   display: flex;
@@ -90,10 +91,10 @@
   position: absolute;
   left: max(clamp(1rem, 4vw, 2.5rem), calc(50% - var(--max-w) / 2 - 3rem));
   bottom: clamp(270px, 8vw, 280px);
-  border: 1.5px solid var(--teal);
+  border: 0.1rem solid var(--teal);
   border-radius: 14px;
-  width: 28px;
-  height: 42px;
+  width: 30px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,7 +155,7 @@
 }
 .hero-right-line {
   width: 1px;
-  height: 150px;
+  height: clamp(5.5rem, 9vw, 8rem);
   background: linear-gradient(to bottom, transparent, var(--teal) 40%);
 }
 .icon-link {
