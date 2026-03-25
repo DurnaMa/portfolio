@@ -185,9 +185,6 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
-.ticker-wrap:hover .ticker-track {
-  animation-play-state: paused;
-}
 .ticker-track {
   display: flex;
   white-space: nowrap;
