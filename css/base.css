@@ -163,16 +163,6 @@ nav {
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
 }
-.nav-links {
-  display: flex;
-  gap: clamp(1rem, 2.5vw, 2rem);
-}
-
-.nav-links a {
-  font-family: 'Space Mono', monospace;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
 .nav-links a:hover {
   color: var(--teal);
 }

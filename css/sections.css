@@ -46,7 +46,7 @@
 .carousel-btn,
 .form-feedback {
   font-family: var(--font-firaCode),sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* === HERO === */
@@ -64,17 +64,17 @@
   text-align: center;
   z-index: 2;
   padding-inline: 1rem;
-  padding-bottom: clamp(4rem, 10vw, 7rem);
+  padding-bottom: clamp(1rem, 10vw, 7rem);
 }
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: clamp(1rem, 5vw + 2rem, 2.5rem);
   color: var(--muted);
   letter-spacing: 0.15em;
   margin-bottom: 0.75rem;
 }
 .hero-title {
   font-family: var(--font-karla), sans-serif;
-  font-size: clamp(2.75rem, 9vw, 6.5rem);
+  font-size: clamp(2.75rem, 9vw, 8rem);
   font-weight: 700;
   line-height: 1;
   margin-bottom: clamp(1.5rem, 4vw, 2.5rem);

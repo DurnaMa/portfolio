@@ -8,7 +8,7 @@
 :root {
   /* Fonts */
   --font-karla: 'Karla', sans-serif;
-  --font-firaCode: 'Fira Code', monospace;
+  --font-firaCode: 'Fira Code', sans-serif;
 
   --teal: #2dd4bf;
   --bg: #0a0a0a;

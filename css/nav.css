@@ -17,8 +17,10 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'Space Mono', monospace;
-  font-size: 1rem;
+  font-family: var(--font-firaCode),sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  color: var(--text);
   transition: color 0.2s;
 }
 .nav-links a:hover {
