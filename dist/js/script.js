@@ -38,7 +38,9 @@ async function includeHTML() {
   for (let i = 0; i < elements.length; i++) {
     const el = elements[i];
     const attr = el.hasAttribute('w3-include-html') ? 'w3-include-html' : 'data-include-html';
-    const resp = await fetch(el.getAttribute(attr));
+    let path = el.getAttribute(attr);
+    if (path.startsWith('/')) path = path.substring(1);
+    const resp = await fetch(getBasePath() + path);
     el.innerHTML = resp.ok ? await resp.text() : 'Page not found';
   }
 }
