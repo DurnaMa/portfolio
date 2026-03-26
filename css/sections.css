@@ -247,11 +247,16 @@
   filter: grayscale(100%);
 }
 .about-card > p {
+  /*font-family: var(--font-karla), sans-serif;*/
+  /*font-weight: 400;*/
+  /*font-size: 1rem;*/
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.about-card-text {
   font-family: var(--font-karla), sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
 }
 .about-list {
   display: flex;
