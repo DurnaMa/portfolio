@@ -62,13 +62,14 @@ html {
   scroll-behavior: smooth;
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
+  max-width: 100%;
 }
 body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
   line-height: 2.6;
-  overflow-x: hidden;
+  max-width: 100%;
 }
 a {
   color: inherit;
@@ -109,9 +110,10 @@ section {
   padding-inline: var(--pad);
 }
 .section-label {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-karla), sans-serif;
+  font-weight: 500;
   color: var(--teal);
-  font-size: 22px;
+  font-size: clamp(1rem, 1vw, 1.5rem);
   display: block;
 }
 .btn-outline,
@@ -121,7 +123,7 @@ section {
   background: transparent;
   padding: 0.75rem 1.75rem;
   border-radius: 999px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 500;
   cursor: pointer;
@@ -146,7 +148,7 @@ section {
   transform: none;
 }
 .btn-small {
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding: 0.625rem 1.25rem;
 }
 
@@ -162,6 +164,16 @@ nav {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
+}
+.nav-links {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.nav-links a {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  transition: color 0.2s;
 }
 .nav-links a:hover {
   color: var(--teal);
@@ -208,7 +220,7 @@ nav {
 }
 .logo-text-nav {
   font-weight: 700;
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.5vw, 1rem);
   line-height: 1.15;
 }
 .hamburger {
@@ -291,12 +303,12 @@ footer {
 }
 .footer-logo-text {
   font-weight: 700;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.15;
 }
 .footer-info {
   font-family: 'Space Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--muted);
   margin-top: 0.375rem;
   line-height: 1.6;
@@ -503,7 +515,7 @@ footer {
     font-size: 18px;
   }
   .ticker-item {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 

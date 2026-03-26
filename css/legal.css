@@ -41,7 +41,7 @@ body {
 .dataprotection h1::before, .legal-notice h1::before, .impressum h1::before {
   content: '// ';
   font-family: 'Space Mono', monospace;
-  font-size: 0.6em;
+  font-size: 1rem;
   color: var(--teal);
   font-weight: 400;
   vertical-align: middle;
@@ -63,7 +63,7 @@ body {
 /* ── Sub-headings ──────────────────────────────────────────── */
 .dataprotection h3, .legal-notice h3, .impressum h3 {
   font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #f0f4f4;
   letter-spacing: 0.08em;
@@ -83,7 +83,7 @@ body {
 
 .dataprotection > p:nth-of-type(2) {
   font-family: 'Space Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.04em;
 }
 
@@ -99,7 +99,7 @@ body {
 .legal-notice .info-block p, .impressum .info-block p {
   margin-bottom: 0.25rem;
   font-family: 'Space Mono', monospace;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #f0f4f4;
   letter-spacing: 0.02em;
 }
@@ -122,7 +122,7 @@ body {
 
 .dataprotection em {
   font-style: italic;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #7a9898;
   line-height: 1.7;
 }
@@ -148,7 +148,7 @@ body {
   position: absolute;
   left: 0;
   color: var(--teal);
-  font-size: 0.75rem;
+  font-size: 1rem;
   top: 0.35em;
 }
 
@@ -179,7 +179,7 @@ body {
 /* ── Date line ─────────────────────────────────────────────── */
 .legal-notice .date, .impressum .date {
   font-family: 'Space Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #7a9898;
   margin-top: 2.5rem;
   letter-spacing: 0.04em;
@@ -193,7 +193,7 @@ body {
 @media (max-width: 768px) {
   .dataprotection, .legal-notice, .impressum { padding: 7rem 1.25rem 4rem; }
   .dataprotection h2, .legal-notice h2, .impressum h2 { font-size: 1.25rem; }
-  .dataprotection ul li, .legal-notice ul li, .impressum ul li { font-size: 0.95rem; }
+  .dataprotection ul li, .legal-notice ul li, .impressum ul li { font-size: 1rem; }
 }
 
 /* ── Mobile ────────────────────────────────────────────────── */
@@ -201,10 +201,10 @@ body {
   .dataprotection, .legal-notice, .impressum { padding: 6rem 1rem 3rem; }
   .dataprotection h1, .legal-notice h1, .impressum h1 { font-size: 1.75rem; }
   .dataprotection h2, .legal-notice h2, .impressum h2 { font-size: 1.05rem; padding-left: 0.65rem; }
-  .dataprotection h3, .legal-notice h3, .impressum h3 { font-size: 0.78rem; }
+  .dataprotection h3, .legal-notice h3, .impressum h3 { font-size: 1rem; }
   .dataprotection p, .dataprotection ul li,
   .legal-notice p, .legal-notice ul li,
-  .impressum p, .impressum ul li { font-size: 0.925rem; }
+  .impressum p, .impressum ul li { font-size: 1rem; }
   .legal-notice .info-block, .impressum .info-block { padding: 1rem; }
 }
 

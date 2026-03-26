@@ -17,10 +17,8 @@ nav {
 }
 
 .nav-links a {
-  font-family: var(--font-firaCode),sans-serif;
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  font-weight: 400;
-  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
   transition: color 0.2s;
 }
 .nav-links a:hover {
@@ -68,7 +66,7 @@ nav {
 }
 .logo-text-nav {
   font-weight: 700;
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.5vw, 1rem);
   line-height: 1.15;
 }
 .hamburger {

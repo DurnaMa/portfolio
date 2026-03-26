@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: './', // Erzeugt relative Pfade im Build
+  base: './',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets', // Optional: bündelt alles in dist/assets
+    assetsDir: 'assets',
   }
 })
