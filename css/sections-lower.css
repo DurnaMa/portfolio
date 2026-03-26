@@ -178,9 +178,9 @@
 }
 .quote-mark {
   position: absolute;
-  top: -6%;
-  left: 7%;
-  width: clamp(80px, 15vw, 140px);
+  top: -8%;
+  left: 5%;
+  width: clamp(40px, 8vw, 65px);
   height: auto;
   z-index: 2;
   pointer-events: none;
