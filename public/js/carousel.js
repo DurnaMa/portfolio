@@ -71,7 +71,6 @@ function updateAllCards() {
   updateDots();
 }
 
-// Alias für Aufrufe aus translations.js
 function updateSideCards() {
   updateAllCards();
 }
@@ -83,30 +82,19 @@ function updateSideCards() {
 function updateCarousel(direction) {
   if (isAnimating || !carouselTrack || !centerCard) return;
 
-  // 1. Index sofort anpassen
   if (direction === 'next') {
     currentIndex = getNextIndex(currentIndex);
   } else {
     currentIndex = getPrevIndex(currentIndex);
   }
-
-  // 2. Vorbereitung der flüssigen Bewegung:
-  // Wir berechnen die Breite einer Karte inkl. Abstand (Gap).
   const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 24;
   const cardWidth = centerCard.offsetWidth + gap;
-  
-  // TRICK für flüssigen Textwechsel:
-  // Wir springen SOFORT auf die verschobene Position (ohne Animation).
-  // Da wir gleichzeitig updateAllCards() aufrufen, sieht es für den User so aus,
-  // als wäre nichts passiert, aber die Karten-Inhalte wurden bereits getauscht.
   const initialOffset = direction === 'next' ? cardWidth : -cardWidth;
   
   carouselTrack.style.transition = 'none';
   carouselTrack.style.transform = `translateX(${initialOffset}px)`;
   
   updateAllCards();
-
-  // 3. Jetzt sanft zurück auf Position 0 gleiten
   isAnimating = true;
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -118,7 +106,6 @@ function updateCarousel(direction) {
   const onEnd = () => {
     carouselTrack.removeEventListener('transitionend', onEnd);
     isAnimating = false;
-    // Quote-Mark smooth anpassen, falls die neue Karte eine andere Höhe hat
     positionQuoteMark(true);
   };
   carouselTrack.addEventListener('transitionend', onEnd);
@@ -140,7 +127,7 @@ function initCarouselControls() {
   );
 }
 
-// Initialisierung beim Laden
+
 updateAllCards();
 initCarouselControls();
 
@@ -153,36 +140,24 @@ function positionQuoteMark(smooth = false) {
   const wrapper = document.querySelector('.carousel-wrapper');
   if (!quoteMark || !centerCard || !wrapper) return;
 
-  // 'smooth' Klasse fügt Transition hinzu oder entfernt sie
   if (smooth) {
     quoteMark.classList.add('smooth');
   } else {
     quoteMark.classList.remove('smooth');
   }
-
   const wrapperRect = wrapper.getBoundingClientRect();
   const cardRect = centerCard.getBoundingClientRect();
   const cardWidth = centerCard.offsetWidth;
-
-  // Dynamische Berechnung des Offsets basierend auf der aktuellen Icon-Größe
   const factorX = window.innerWidth < 480 ? 0.45 : 0.55;
   const offsetLeft = quoteMark.offsetWidth * factorX;
   const offsetTop = quoteMark.offsetHeight * 0.15;
-
-  // Horizontal: Icon bleibt in der Mitte des Wrappers minus halbe Kartenbreite und Offset
   const leftPos = (wrapperRect.width - cardWidth) / 2 - offsetLeft;
-  
-  // Sicherstellen, dass es auf extrem kleinen Screens (320px) nicht links aus dem Bild ragt
   const minLeft = 4; 
   quoteMark.style.left = Math.max(minLeft, leftPos) + 'px';
-
-  // Vertikal: Top-Position der Karte relativ zum Wrapper
   quoteMark.style.top = (cardRect.top - wrapperRect.top) - offsetTop + 'px';
 }
 
-// Event Listener für Größenänderungen und Initialisierung
 window.addEventListener('load', () => positionQuoteMark(false));
 window.addEventListener('resize', () => positionQuoteMark(false));
 
-// Fallback für späte Renderings
 setTimeout(() => positionQuoteMark(false), 0);

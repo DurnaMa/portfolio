@@ -63,7 +63,6 @@ function nextCardR() {
 function initOverlay() {
   const overlay = document.getElementById('project-overlay');
   if (!overlay) return;
-  // Close on click outside card (for <dialog>, click on ::backdrop)
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) closeProjectOverlay();
   });
