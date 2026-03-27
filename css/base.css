@@ -384,7 +384,8 @@ footer {
   .scroll-line {
     display: none;
   }
-  .carousel .ref-card.side {
+  .carousel .ref-card.side,
+  .carousel .ref-card.extra-side {
     display: none;
   }
 
