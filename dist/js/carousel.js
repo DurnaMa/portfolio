@@ -111,7 +111,7 @@ function initCarouselControls() {
 
 initCarouselControls();
 
-// // ── QUOTE MARK POSITION ──
+// ── QUOTE MARK POSITION ──
 // const quoteMark = document.querySelector('.quote-mark');
 // const carouselContainer = document.querySelector('.carousel');
 //
